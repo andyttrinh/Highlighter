@@ -7,21 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF1883C02ABD00C200935937 /* NewHighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1883BF2ABD00C200935937 /* NewHighlightView.swift */; };
+		DF1883C82ABD07E900935937 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1883C72ABD07E900935937 /* ShareViewController.swift */; };
+		DF1883CB2ABD07E900935937 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF1883C92ABD07E900935937 /* MainInterface.storyboard */; };
 		DF225EF82ABCF303008D0FBB /* HighlighterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF225EF72ABCF303008D0FBB /* HighlighterApp.swift */; };
-		DF225EFA2ABCF303008D0FBB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF225EF92ABCF303008D0FBB /* ContentView.swift */; };
+		DF225EFA2ABCF303008D0FBB /* HighlightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF225EF92ABCF303008D0FBB /* HighlightsView.swift */; };
 		DF225EFC2ABCF304008D0FBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF225EFB2ABCF304008D0FBB /* Assets.xcassets */; };
 		DF225EFF2ABCF304008D0FBB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF225EFE2ABCF304008D0FBB /* Preview Assets.xcassets */; };
+		DF225F0A2ABCF3F2008D0FBB /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF225F092ABCF3F2008D0FBB /* PreviewContainer.swift */; };
+		DF225F0C2ABCF660008D0FBB /* EditHighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF225F0B2ABCF660008D0FBB /* EditHighlightView.swift */; };
+		DF6AD8E72ABDF9E100B8DA0A /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6AD8E62ABDF9E100B8DA0A /* Highlight.swift */; };
+		DFA957782ABDEEB700B13F7D /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA957772ABDEEB700B13F7D /* Label.swift */; };
+		DFA9577B2ABDF49900B13F7D /* HighlighterShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DF1883C52ABD07E900935937 /* HighlighterShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DFA957792ABDF46B00B13F7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF225EEC2ABCF303008D0FBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF1883C42ABD07E900935937;
+			remoteInfo = HighlighterShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DF1883D32ABD07E900935937 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DFA9577B2ABDF49900B13F7D /* HighlighterShareExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		DF1883BF2ABD00C200935937 /* NewHighlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHighlightView.swift; sourceTree = "<group>"; };
+		DF1883C52ABD07E900935937 /* HighlighterShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HighlighterShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF1883C72ABD07E900935937 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		DF1883CA2ABD07E900935937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		DF1883CC2ABD07E900935937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF1883D42ABD127400935937 /* Highlighter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Highlighter.entitlements; sourceTree = "<group>"; };
+		DF1883D52ABD179C00935937 /* HighlighterShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HighlighterShareExtension.entitlements; sourceTree = "<group>"; };
 		DF225EF42ABCF303008D0FBB /* Highlighter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Highlighter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF225EF72ABCF303008D0FBB /* HighlighterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlighterApp.swift; sourceTree = "<group>"; };
-		DF225EF92ABCF303008D0FBB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DF225EF92ABCF303008D0FBB /* HighlightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsView.swift; sourceTree = "<group>"; };
 		DF225EFB2ABCF304008D0FBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF225EFE2ABCF304008D0FBB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DF225F092ABCF3F2008D0FBB /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		DF225F0B2ABCF660008D0FBB /* EditHighlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHighlightView.swift; sourceTree = "<group>"; };
+		DF6AD8E62ABDF9E100B8DA0A /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
+		DFA957772ABDEEB700B13F7D /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		DFD083B62ABDC5DA00454815 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DF1883C22ABD07E900935937 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DF225EF12ABCF303008D0FBB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -32,10 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF1883C62ABD07E900935937 /* HighlighterShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DF1883D52ABD179C00935937 /* HighlighterShareExtension.entitlements */,
+				DF1883C72ABD07E900935937 /* ShareViewController.swift */,
+				DF1883C92ABD07E900935937 /* MainInterface.storyboard */,
+				DF1883CC2ABD07E900935937 /* Info.plist */,
+			);
+			path = HighlighterShareExtension;
+			sourceTree = "<group>";
+		};
 		DF225EEB2ABCF303008D0FBB = {
 			isa = PBXGroup;
 			children = (
+				DFD083B52ABDC5DA00454815 /* Model.xcdatamodeld */,
 				DF225EF62ABCF303008D0FBB /* Highlighter */,
+				DF1883C62ABD07E900935937 /* HighlighterShareExtension */,
 				DF225EF52ABCF303008D0FBB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				DF225EF42ABCF303008D0FBB /* Highlighter.app */,
+				DF1883C52ABD07E900935937 /* HighlighterShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,8 +116,10 @@
 		DF225EF62ABCF303008D0FBB /* Highlighter */ = {
 			isa = PBXGroup;
 			children = (
+				DF1883D42ABD127400935937 /* Highlighter.entitlements */,
+				DF225F062ABCF341008D0FBB /* Views */,
+				DF225F052ABCF33D008D0FBB /* Models */,
 				DF225EF72ABCF303008D0FBB /* HighlighterApp.swift */,
-				DF225EF92ABCF303008D0FBB /* ContentView.swift */,
 				DF225EFB2ABCF304008D0FBB /* Assets.xcassets */,
 				DF225EFD2ABCF304008D0FBB /* Preview Content */,
 			);
@@ -67,9 +134,46 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		DF225F052ABCF33D008D0FBB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF225F092ABCF3F2008D0FBB /* PreviewContainer.swift */,
+				DFA957772ABDEEB700B13F7D /* Label.swift */,
+				DF6AD8E62ABDF9E100B8DA0A /* Highlight.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DF225F062ABCF341008D0FBB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DF225EF92ABCF303008D0FBB /* HighlightsView.swift */,
+				DF225F0B2ABCF660008D0FBB /* EditHighlightView.swift */,
+				DF1883BF2ABD00C200935937 /* NewHighlightView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DF1883C42ABD07E900935937 /* HighlighterShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF1883D02ABD07E900935937 /* Build configuration list for PBXNativeTarget "HighlighterShareExtension" */;
+			buildPhases = (
+				DF1883C12ABD07E900935937 /* Sources */,
+				DF1883C22ABD07E900935937 /* Frameworks */,
+				DF1883C32ABD07E900935937 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HighlighterShareExtension;
+			productName = HighlighterShareExtension;
+			productReference = DF1883C52ABD07E900935937 /* HighlighterShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		DF225EF32ABCF303008D0FBB /* Highlighter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DF225F022ABCF304008D0FBB /* Build configuration list for PBXNativeTarget "Highlighter" */;
@@ -77,10 +181,12 @@
 				DF225EF02ABCF303008D0FBB /* Sources */,
 				DF225EF12ABCF303008D0FBB /* Frameworks */,
 				DF225EF22ABCF303008D0FBB /* Resources */,
+				DF1883D32ABD07E900935937 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DFA9577A2ABDF46B00B13F7D /* PBXTargetDependency */,
 			);
 			name = Highlighter;
 			productName = Highlighter;
@@ -97,6 +203,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					DF1883C42ABD07E900935937 = {
+						CreatedOnToolsVersion = 15.0;
+					};
 					DF225EF32ABCF303008D0FBB = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -116,11 +225,20 @@
 			projectRoot = "";
 			targets = (
 				DF225EF32ABCF303008D0FBB /* Highlighter */,
+				DF1883C42ABD07E900935937 /* HighlighterShareExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DF1883C32ABD07E900935937 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF1883CB2ABD07E900935937 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DF225EF22ABCF303008D0FBB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,18 +251,102 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DF1883C12ABD07E900935937 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF1883C82ABD07E900935937 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DF225EF02ABCF303008D0FBB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF225EFA2ABCF303008D0FBB /* ContentView.swift in Sources */,
+				DF225EFA2ABCF303008D0FBB /* HighlightsView.swift in Sources */,
+				DF225F0C2ABCF660008D0FBB /* EditHighlightView.swift in Sources */,
+				DF6AD8E72ABDF9E100B8DA0A /* Highlight.swift in Sources */,
+				DF225F0A2ABCF3F2008D0FBB /* PreviewContainer.swift in Sources */,
+				DF1883C02ABD00C200935937 /* NewHighlightView.swift in Sources */,
+				DFA957782ABDEEB700B13F7D /* Label.swift in Sources */,
 				DF225EF82ABCF303008D0FBB /* HighlighterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DFA9577A2ABDF46B00B13F7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF1883C42ABD07E900935937 /* HighlighterShareExtension */;
+			targetProxy = DFA957792ABDF46B00B13F7D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DF1883C92ABD07E900935937 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF1883CA2ABD07E900935937 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		DF1883D12ABD07E900935937 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HighlighterShareExtension/HighlighterShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KYNHM628PH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HighlighterShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HighlighterShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = andy.Highlighter.HighlighterShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DF1883D22ABD07E900935937 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HighlighterShareExtension/HighlighterShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KYNHM628PH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HighlighterShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HighlighterShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = andy.Highlighter.HighlighterShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DF225F002ABCF304008D0FBB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -267,11 +469,14 @@
 		DF225F032ABCF304008D0FBB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Highlighter/Highlighter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Highlighter/Preview Content\"";
+				DEVELOPMENT_TEAM = KYNHM628PH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -295,11 +500,14 @@
 		DF225F042ABCF304008D0FBB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Highlighter/Highlighter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Highlighter/Preview Content\"";
+				DEVELOPMENT_TEAM = KYNHM628PH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -323,6 +531,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DF1883D02ABD07E900935937 /* Build configuration list for PBXNativeTarget "HighlighterShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF1883D12ABD07E900935937 /* Debug */,
+				DF1883D22ABD07E900935937 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DF225EEF2ABCF303008D0FBB /* Build configuration list for PBXProject "Highlighter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -342,6 +559,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DFD083B52ABDC5DA00454815 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DFD083B62ABDC5DA00454815 /* Model.xcdatamodel */,
+			);
+			currentVersion = DFD083B62ABDC5DA00454815 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DF225EEC2ABCF303008D0FBB /* Project object */;
 }

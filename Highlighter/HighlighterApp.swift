@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct HighlighterApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HighlightsView()
+                .modelContainer(for: [Highlight.self])
         }
     }
 }

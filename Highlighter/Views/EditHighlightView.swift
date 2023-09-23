@@ -20,6 +20,7 @@ struct EditHighlightView: View {
                 ForEach(highlight.labels) { label in
                     Text(label.name)
                 }
+                AddLabel(highlight: $highlight)
             }
         }
 

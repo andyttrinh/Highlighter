@@ -27,4 +27,6 @@ extension Label {
         Label(name: "News"),
         Label(name: "Inspiration")
     ]
+    
+    static let empty = Label(name: "")
 }

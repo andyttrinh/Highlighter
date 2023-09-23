@@ -19,7 +19,6 @@
 		DF6AD8E72ABDF9E100B8DA0A /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6AD8E62ABDF9E100B8DA0A /* Highlight.swift */; };
 		DFA957782ABDEEB700B13F7D /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA957772ABDEEB700B13F7D /* Label.swift */; };
 		DFA9577B2ABDF49900B13F7D /* HighlighterShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DF1883C52ABD07E900935937 /* HighlighterShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		DFB2B6C22ABEA88300F661AE /* AddLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB2B6C12ABEA88300F661AE /* AddLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +62,6 @@
 		DF225F0B2ABCF660008D0FBB /* EditHighlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHighlightView.swift; sourceTree = "<group>"; };
 		DF6AD8E62ABDF9E100B8DA0A /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		DFA957772ABDEEB700B13F7D /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
-		DFB2B6C12ABEA88300F661AE /* AddLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabel.swift; sourceTree = "<group>"; };
 		DFD083B62ABDC5DA00454815 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,7 +150,6 @@
 				DF225EF92ABCF303008D0FBB /* HighlightsView.swift */,
 				DF225F0B2ABCF660008D0FBB /* EditHighlightView.swift */,
 				DF1883BF2ABD00C200935937 /* NewHighlightView.swift */,
-				DFB2B6C12ABEA88300F661AE /* AddLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,7 +265,6 @@
 			files = (
 				DF225EFA2ABCF303008D0FBB /* HighlightsView.swift in Sources */,
 				DF225F0C2ABCF660008D0FBB /* EditHighlightView.swift in Sources */,
-				DFB2B6C22ABEA88300F661AE /* AddLabel.swift in Sources */,
 				DF6AD8E72ABDF9E100B8DA0A /* Highlight.swift in Sources */,
 				DF225F0A2ABCF3F2008D0FBB /* PreviewContainer.swift in Sources */,
 				DF1883C02ABD00C200935937 /* NewHighlightView.swift in Sources */,

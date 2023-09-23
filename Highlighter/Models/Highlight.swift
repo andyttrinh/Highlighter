@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Highlight: Identifiable {
+class Highlight: Identifiable{
     let id: UUID
     var source: String
     var content: String

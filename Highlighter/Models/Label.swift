@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct GlobalLabel {
+    static var labels: [Label] = []
+}
+
 class Label: Identifiable {
     let id: UUID
     var name: String
@@ -16,4 +20,11 @@ class Label: Identifiable {
         self.name = name
     }
     
+}
+
+extension Label {
+    static let sampleData = [
+        Label(name: "News"),
+        Label(name: "Inspiration")
+    ]
 }

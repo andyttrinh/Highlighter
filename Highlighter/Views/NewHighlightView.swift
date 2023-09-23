@@ -6,15 +6,14 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct NewHighlightView: View {
-    @Environment(\.modelContext) private var context
-    @Bindable var highlight: Highlight = Highlight.empty
+    @State var newHighlight: Highlight = Highlight.empty
+    @Binding var highlights: [Highlight]
     @Binding var isPresentingNewHighlightView: Bool
     var body: some View {
         NavigationStack {
-            EditHighlightView(highlight: highlight)
+            EditHighlightView(highlight: $newHighlight)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Dismiss") {
@@ -23,7 +22,7 @@ struct NewHighlightView: View {
                     }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Add") {
-                            context.insert(highlight)
+                            highlights.append(newHighlight)
                             isPresentingNewHighlightView = false
                         }
                     }
@@ -33,6 +32,6 @@ struct NewHighlightView: View {
     }
 }
 
-//#Preview {
-//    NewHighlightView()
-//}
+#Preview {
+    NewHighlightView(highlights: .constant(Highlight.sampleData), isPresentingNewHighlightView: .constant(true))
+}

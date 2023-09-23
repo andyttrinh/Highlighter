@@ -6,11 +6,9 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
 class Highlight: Identifiable {
-    @Attribute(.unique) let id: UUID
+    let id: UUID
     var source: String
     var content: String
 

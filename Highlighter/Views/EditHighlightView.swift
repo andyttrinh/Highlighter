@@ -6,11 +6,9 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct EditHighlightView: View {
-//    @Query var labels: [Label]
-    @Bindable var highlight: Highlight
+    @Binding var highlight: Highlight
     var body: some View {
         Form {
             TextField("Source", text: $highlight.source)
@@ -26,7 +24,7 @@ struct EditHighlightView: View {
     }
 }
 
-//#Preview {
-//    EditHighlightView(highlight: .constant(Highlight(
-//        source: "Instapaper", content: "This is the content")))
-//}
+#Preview {
+    EditHighlightView(highlight: .constant(Highlight(
+        source: "Instapaper", content: "This is the content")))
+}

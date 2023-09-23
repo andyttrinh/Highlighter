@@ -10,10 +10,11 @@ import SwiftData
 
 @main
 struct HighlighterApp: App {
+    @State var highlights: [Highlight] = Highlight.sampleData
+    
     var body: some Scene {
         WindowGroup {
-            HighlightsView()
-                .modelContainer(for: [Highlight.self])
+            HighlightsView(highlights: $highlights)
         }
     }
 }

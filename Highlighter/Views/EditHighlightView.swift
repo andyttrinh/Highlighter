@@ -21,6 +21,9 @@ struct EditHighlightView: View {
                 ForEach(highlight.labels) { label in
                     Text(label.name)
                 }
+                .onDelete { indeces in
+                    highlight.labels.remove(atOffsets: indeces)
+                }
                 HStack {
                     Section(header: Text("Add Label")) {
                         TextField("Enter Label Name", text: $newLabelName)
@@ -28,7 +31,8 @@ struct EditHighlightView: View {
                             Text("Add Label")
                         }
                     }
-                }            }
+                }
+            }
         }
 
     }

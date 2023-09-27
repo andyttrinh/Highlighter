@@ -9,7 +9,9 @@ import SwiftUI
 
 struct HighlightsView: View {
     @Binding var highlights: [Highlight]
+    @Environment(\.scenePhase) private var scenePhase
     @State var isPresentingNewHighlightView = false
+    let saveAction: ()->Void
     
     var body: some View {
         NavigationStack {
@@ -33,9 +35,12 @@ struct HighlightsView: View {
                 highlights: $highlights,
                 isPresentingNewHighlightView: $isPresentingNewHighlightView)
         }
+        .onChange(of: scenePhase) { oldCount, newCount in
+            if newCount == .inactive { saveAction() }
+        }
     }
 }
 
 #Preview {
-    HighlightsView(highlights: .constant(Highlight.sampleData))
+    HighlightsView(highlights: .constant(Highlight.sampleData), saveAction: {})
 }

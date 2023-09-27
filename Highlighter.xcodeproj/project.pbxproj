@@ -19,6 +19,7 @@
 		DF6AD8E72ABDF9E100B8DA0A /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6AD8E62ABDF9E100B8DA0A /* Highlight.swift */; };
 		DFA957782ABDEEB700B13F7D /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA957772ABDEEB700B13F7D /* Label.swift */; };
 		DFA9577B2ABDF49900B13F7D /* HighlighterShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DF1883C52ABD07E900935937 /* HighlighterShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DFEF51A32AC4E463009D01DD /* HighlightStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF51A22AC4E463009D01DD /* HighlightStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		DF6AD8E62ABDF9E100B8DA0A /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		DFA957772ABDEEB700B13F7D /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		DFD083B62ABDC5DA00454815 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		DFEF51A22AC4E463009D01DD /* HighlightStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				DF225F092ABCF3F2008D0FBB /* PreviewContainer.swift */,
 				DFA957772ABDEEB700B13F7D /* Label.swift */,
 				DF6AD8E62ABDF9E100B8DA0A /* Highlight.swift */,
+				DFEF51A22AC4E463009D01DD /* HighlightStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				DF225F0C2ABCF660008D0FBB /* EditHighlightView.swift in Sources */,
 				DF6AD8E72ABDF9E100B8DA0A /* Highlight.swift in Sources */,
 				DF225F0A2ABCF3F2008D0FBB /* PreviewContainer.swift in Sources */,
+				DFEF51A32AC4E463009D01DD /* HighlightStore.swift in Sources */,
 				DF1883C02ABD00C200935937 /* NewHighlightView.swift in Sources */,
 				DFA957782ABDEEB700B13F7D /* Label.swift in Sources */,
 				DF225EF82ABCF303008D0FBB /* HighlighterApp.swift in Sources */,

@@ -10,11 +10,26 @@ import SwiftData
 
 @main
 struct HighlighterApp: App {
-    @State var highlights: [Highlight] = Highlight.sampleData
+    @StateObject private var store = HighlightStore()
     
     var body: some Scene {
         WindowGroup {
-            HighlightsView(highlights: $highlights)
+            HighlightsView(highlights: $store.highlights) {
+                Task {
+                    do {
+                        try await store.save(highlights: store.highlights)
+                    } catch {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+                .task {
+                    do {
+                        try await store.load()
+                    } catch {
+                        fatalError(error.localizedDescription)
+                    }
+                }
         }
     }
 }

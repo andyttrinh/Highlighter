@@ -11,7 +11,7 @@ struct GlobalLabel {
     static var labels: [Label] = []
 }
 
-class Label: Identifiable {
+class Label: Identifiable, Codable {
     let id: UUID
     var name: String
     

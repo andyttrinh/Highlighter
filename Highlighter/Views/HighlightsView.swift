@@ -11,6 +11,7 @@ struct HighlightsView: View {
     @Binding var highlights: [Highlight]
     @Environment(\.scenePhase) private var scenePhase
     @State var isPresentingNewHighlightView = false
+    @State var labelFilter: [Label] = []
     let saveAction: ()->Void
     
     var body: some View {
@@ -33,6 +34,13 @@ struct HighlightsView: View {
                     isPresentingNewHighlightView = true
                 }) {
                     Image(systemName: "plus")
+                }
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .topBarLeading) {
+                    Button("Filter") {
+                        print("filter")
+                    }
                 }
             }
         }

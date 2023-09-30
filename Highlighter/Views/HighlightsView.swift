@@ -18,7 +18,7 @@ struct HighlightsView: View {
             List() {
                 ForEach($highlights) { $highlight in
                     NavigationLink(destination: EditHighlightView(highlight: $highlight)){
-                        Text(highlight.content)
+                        HighlightCardView(highlight: $highlight)
                     }
                 }
                 .onDelete(perform: { indexSet in
@@ -30,8 +30,6 @@ struct HighlightsView: View {
             }
             .toolbar {
                 Button(action: {
-                    
-                    
                     isPresentingNewHighlightView = true
                 }) {
                     Image(systemName: "plus")

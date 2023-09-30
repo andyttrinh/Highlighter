@@ -20,11 +20,7 @@ struct EditHighlightView: View {
             
             Section(header: Text("Labels")) {
                 ForEach(highlight.labels) { label in
-                    Text(label.name)
-                        .padding(8)
-                        .background(label.theme.mainColor)
-                        .clipShape(RoundedRectangle(cornerRadius: 4))
-                        .foregroundStyle(label.theme.accentColor)
+                    LabelView(label: label)
                 }
                 .onDelete { indeces in
                     highlight.labels.remove(atOffsets: indeces)

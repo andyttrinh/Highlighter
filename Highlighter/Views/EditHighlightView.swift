@@ -10,6 +10,7 @@ import SwiftUI
 struct EditHighlightView: View {
     @Binding var highlight: Highlight
     @State private var newLabelName: String = ""
+    @State private var themeSelection: Theme = .sky
     var body: some View {
         Form {
             Section(header: Text("Info")){
@@ -20,6 +21,10 @@ struct EditHighlightView: View {
             Section(header: Text("Labels")) {
                 ForEach(highlight.labels) { label in
                     Text(label.name)
+                        .padding(8)
+                        .background(label.theme.mainColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 4))
+                        .foregroundStyle(label.theme.accentColor)
                 }
                 .onDelete { indeces in
                     highlight.labels.remove(atOffsets: indeces)
@@ -32,6 +37,7 @@ struct EditHighlightView: View {
                         }
                     }
                 }
+                ThemePicker(selection: $themeSelection)
             }
         }
 
@@ -40,7 +46,7 @@ struct EditHighlightView: View {
     private func addNewLabel() {
             withAnimation {
                 if !newLabelName.isEmpty {
-                    let newLabel = Label(name: newLabelName)
+                    let newLabel = Label(name: newLabelName, theme: themeSelection)
                     highlight.labels.append(newLabel)
                     newLabelName = ""
                 }

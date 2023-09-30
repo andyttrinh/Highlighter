@@ -16,7 +16,7 @@ class HighlightStore: ObservableObject {
                                            in: .userDomainMask,
                                            appropriateFor: nil,
                                            create: false)
-        .appendingPathComponent("highlight.data")
+        .appendingPathComponent("highlights.data")
     }
     
     func load() async throws {

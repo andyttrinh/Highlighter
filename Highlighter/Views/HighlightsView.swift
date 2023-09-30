@@ -15,10 +15,18 @@ struct HighlightsView: View {
     
     var body: some View {
         NavigationStack {
-            List($highlights) { $highlight in
-                NavigationLink(destination: EditHighlightView(highlight: $highlight)){
-                    Text(highlight.content)
+            List() {
+                ForEach($highlights) { $highlight in
+                    NavigationLink(destination: EditHighlightView(highlight: $highlight)){
+                        Text(highlight.content)
+                    }
                 }
+                .onDelete(perform: { indexSet in
+                    for index in indexSet {
+                        highlights.remove(at: index)
+                    }
+                })
+                
             }
             .toolbar {
                 Button(action: {

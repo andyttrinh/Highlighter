@@ -11,9 +11,9 @@ struct HighlightsView: View {
     @Binding var highlights: [Highlight]
     @Environment(\.scenePhase) private var scenePhase
     @State var isPresentingNewHighlightView = false
-    @State var labelFilter: [Label] = []
+    @State var isPresentingNewFilterView = false
+    @State var labelFilter: [Label] = [Label(name: "Inspiration"), Label(name: "Computer")]
     let saveAction: ()->Void
-    var filterArr: [Label] = [Label(name: "Inspiration"), Label(name: "Computer")]
     
     var body: some View {
         NavigationStack {
@@ -39,8 +39,8 @@ struct HighlightsView: View {
             }
             .toolbar {
                 ToolbarItemGroup(placement: .topBarLeading) {
-                    Button("Filter") {
-                        print("filter")
+                    Button(action: {isPresentingNewFilterView = true}) {
+                        Text("Filter")
                     }
                 }
             }
@@ -50,13 +50,16 @@ struct HighlightsView: View {
                 highlights: $highlights,
                 isPresentingNewHighlightView: $isPresentingNewHighlightView)
         }
+        .sheet(isPresented: $isPresentingNewFilterView) {
+            FilterView(filterLabels: $labelFilter)
+        }
         .onChange(of: scenePhase) { oldCount, newCount in
             if newCount == .inactive { saveAction() }
         }
     }
     
     private func filterFunc(highlight: Highlight) -> Bool {
-        return filterArr.allSatisfy(highlight.labels.contains(_:))
+        return labelFilter.allSatisfy(highlight.labels.contains(_:))
     }
 }
 

@@ -23,6 +23,7 @@
 		DF7097F82AC7D04B009BD691 /* HighlightCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F72AC7D04B009BD691 /* HighlightCardView.swift */; };
 		DF7097FA2AC7D117009BD691 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F92AC7D117009BD691 /* LabelView.swift */; };
 		DF7097FC2AC7D927009BD691 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097FB2AC7D927009BD691 /* NavigationView.swift */; };
+		DF7097FE2AC7EEC4009BD691 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097FD2AC7EEC4009BD691 /* FilterView.swift */; };
 		DFA957782ABDEEB700B13F7D /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA957772ABDEEB700B13F7D /* Label.swift */; };
 		DFA9577B2ABDF49900B13F7D /* HighlighterShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DF1883C52ABD07E900935937 /* HighlighterShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DFEF51A32AC4E463009D01DD /* HighlightStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF51A22AC4E463009D01DD /* HighlightStore.swift */; };
@@ -74,6 +75,7 @@
 		DF7097F72AC7D04B009BD691 /* HighlightCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightCardView.swift; sourceTree = "<group>"; };
 		DF7097F92AC7D117009BD691 /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		DF7097FB2AC7D927009BD691 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		DF7097FD2AC7EEC4009BD691 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		DFA957772ABDEEB700B13F7D /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		DFD083B62ABDC5DA00454815 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		DFEF51A22AC4E463009D01DD /* HighlightStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightStore.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				DF7097F72AC7D04B009BD691 /* HighlightCardView.swift */,
 				DF7097F92AC7D117009BD691 /* LabelView.swift */,
 				DF7097FB2AC7D927009BD691 /* NavigationView.swift */,
+				DF7097FD2AC7EEC4009BD691 /* FilterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				DF7097FA2AC7D117009BD691 /* LabelView.swift in Sources */,
 				DF7097F42AC7C9AE009BD691 /* ThemeView.swift in Sources */,
 				DF225EF82ABCF303008D0FBB /* HighlighterApp.swift in Sources */,
+				DF7097FE2AC7EEC4009BD691 /* FilterView.swift in Sources */,
 				DF7097F82AC7D04B009BD691 /* HighlightCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

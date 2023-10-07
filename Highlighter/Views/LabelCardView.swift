@@ -12,6 +12,7 @@ struct LabelCardView: View {
     var body: some View {
         Text(label.name)
             .padding(8)
+//            .frame(maxWidth: .infinity)
             .background(label.theme.mainColor)
             .clipShape(RoundedRectangle(cornerRadius: 4))
             .foregroundStyle(label.theme.accentColor)

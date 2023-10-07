@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Label: Identifiable, Codable, Equatable {
+class Label: Identifiable, Codable, Equatable, Hashable {
     let id: UUID
     var name: String
     var theme: Theme
@@ -29,8 +29,10 @@ class Label: Identifiable, Codable, Equatable {
     public static func ==(lhs: Label, rhs: String) -> Bool {
         return lhs.name == rhs
     }
-
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
 
 extension Label {

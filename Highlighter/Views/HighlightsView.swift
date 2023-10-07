@@ -12,7 +12,7 @@ struct HighlightsView: View {
     @Environment(\.scenePhase) private var scenePhase
     @State var isPresentingNewHighlightView = false
     @State var isPresentingNewFilterView = false
-    @State var labelFilter: [Label] = [Label(name: "Inspiration"), Label(name: "Computer")]
+    @State var labelFilter: [Label] = []
     let saveAction: ()->Void
     
     var body: some View {

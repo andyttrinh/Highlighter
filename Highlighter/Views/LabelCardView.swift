@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LabelView: View {
+struct LabelCardView: View {
     var label: Label
     var body: some View {
         Text(label.name)
@@ -19,5 +19,5 @@ struct LabelView: View {
 }
 
 #Preview {
-    LabelView(label: Highlight.sampleData[0].labels[0])
+    LabelCardView(label: Highlight.sampleData[0].labels[0])
 }

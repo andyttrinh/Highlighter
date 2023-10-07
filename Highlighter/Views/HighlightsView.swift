@@ -51,7 +51,7 @@ struct HighlightsView: View {
                 isPresentingNewHighlightView: $isPresentingNewHighlightView)
         }
         .sheet(isPresented: $isPresentingNewFilterView) {
-            FilterView(filterLabels: $labelFilter)
+            LabelsView(filterLabels: $labelFilter)
         }
         .onChange(of: scenePhase) { oldCount, newCount in
             if newCount == .inactive { saveAction() }

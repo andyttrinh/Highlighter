@@ -2,34 +2,33 @@
 //  AddLabel.swift
 //  Highlighter
 //
-//  Created by Andy Trinh on 9/23/23.
+//  Created by Andy Trinh on 10/7/23.
 //
 
 import SwiftUI
 
 struct AddLabel: View {
-    @Binding var highlight: Highlight
     @State private var newLabelName: String = ""
+    @State private var themeSelection: Theme = .sky
     var body: some View {
-        HStack {
-            Section(header: Text("Add Label")) {
-                TextField("Enter Label Name", text: $newLabelName)
-                Button(action: addNewLabel) {
-                    Text("Add Label")
+        VStack {
+            HStack {
+                Section(header: Text("Add Label")) {
+                    TextField("Enter Label Name", text: $newLabelName)
+                    Button(action: addNewLabel) {
+                        Text("Add Label")
+                    }
                 }
             }
+            ThemePicker(selection: $themeSelection)
         }
     }
     
     private func addNewLabel() {
-            if !newLabelName.isEmpty {
-                let newLabel = Label(name: newLabelName)
-                highlight.labels.append(newLabel)
-                newLabelName = ""
-            }
+           // Need to add to global labels - Andy
         }
 }
 
 #Preview {
-    AddLabel(highlight: .constant(Highlight.sampleData[0]))
+    AddLabel()
 }

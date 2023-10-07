@@ -7,14 +7,14 @@
 //
 import SwiftUI
 
-struct FilterView: View {
+struct LabelsView: View {
     @State private var newLabelName: String = ""
     @Binding var filterLabels: [Label]
     var body: some View {
         Form {
             Section(header: Text("Labels")) {
                 ForEach(filterLabels) { label in
-                    LabelView(label: label)
+                    LabelCardView(label: label)
                 }
                 .onDelete { indeces in
                     filterLabels.remove(atOffsets: indeces)
@@ -44,5 +44,5 @@ struct FilterView: View {
 }
 
 #Preview {
-    FilterView(filterLabels: .constant(Label.sampleData))
+    LabelsView(filterLabels: .constant(Label.sampleData))
 }

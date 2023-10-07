@@ -21,12 +21,13 @@
 		DF7097F42AC7C9AE009BD691 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F32AC7C9AE009BD691 /* ThemeView.swift */; };
 		DF7097F62AC7CA4C009BD691 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F52AC7CA4C009BD691 /* ThemePicker.swift */; };
 		DF7097F82AC7D04B009BD691 /* HighlightCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F72AC7D04B009BD691 /* HighlightCardView.swift */; };
-		DF7097FA2AC7D117009BD691 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F92AC7D117009BD691 /* LabelView.swift */; };
+		DF7097FA2AC7D117009BD691 /* LabelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F92AC7D117009BD691 /* LabelCardView.swift */; };
 		DF7097FC2AC7D927009BD691 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097FB2AC7D927009BD691 /* NavigationView.swift */; };
-		DF7097FE2AC7EEC4009BD691 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097FD2AC7EEC4009BD691 /* FilterView.swift */; };
+		DF7097FE2AC7EEC4009BD691 /* LabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097FD2AC7EEC4009BD691 /* LabelsView.swift */; };
 		DFA957782ABDEEB700B13F7D /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA957772ABDEEB700B13F7D /* Label.swift */; };
 		DFA9577B2ABDF49900B13F7D /* HighlighterShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DF1883C52ABD07E900935937 /* HighlighterShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DFEF51A32AC4E463009D01DD /* HighlightStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF51A22AC4E463009D01DD /* HighlightStore.swift */; };
+		DFFBAE562AD1136100BA9E07 /* AddLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBAE552AD1136100BA9E07 /* AddLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,12 +74,13 @@
 		DF7097F32AC7C9AE009BD691 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		DF7097F52AC7CA4C009BD691 /* ThemePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		DF7097F72AC7D04B009BD691 /* HighlightCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightCardView.swift; sourceTree = "<group>"; };
-		DF7097F92AC7D117009BD691 /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		DF7097F92AC7D117009BD691 /* LabelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCardView.swift; sourceTree = "<group>"; };
 		DF7097FB2AC7D927009BD691 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
-		DF7097FD2AC7EEC4009BD691 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		DF7097FD2AC7EEC4009BD691 /* LabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelsView.swift; sourceTree = "<group>"; };
 		DFA957772ABDEEB700B13F7D /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		DFD083B62ABDC5DA00454815 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		DFEF51A22AC4E463009D01DD /* HighlightStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightStore.swift; sourceTree = "<group>"; };
+		DFFBAE552AD1136100BA9E07 /* AddLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,9 +173,10 @@
 				DF1883BF2ABD00C200935937 /* NewHighlightView.swift */,
 				DF7097F32AC7C9AE009BD691 /* ThemeView.swift */,
 				DF7097F72AC7D04B009BD691 /* HighlightCardView.swift */,
-				DF7097F92AC7D117009BD691 /* LabelView.swift */,
+				DF7097F92AC7D117009BD691 /* LabelCardView.swift */,
 				DF7097FB2AC7D927009BD691 /* NavigationView.swift */,
-				DF7097FD2AC7EEC4009BD691 /* FilterView.swift */,
+				DF7097FD2AC7EEC4009BD691 /* LabelsView.swift */,
+				DFFBAE552AD1136100BA9E07 /* AddLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				DF7097FC2AC7D927009BD691 /* NavigationView.swift in Sources */,
 				DF7097F62AC7CA4C009BD691 /* ThemePicker.swift in Sources */,
+				DFFBAE562AD1136100BA9E07 /* AddLabel.swift in Sources */,
 				DF7097F22AC7C355009BD691 /* Theme.swift in Sources */,
 				DF225EFA2ABCF303008D0FBB /* HighlightsView.swift in Sources */,
 				DF225F0C2ABCF660008D0FBB /* EditHighlightView.swift in Sources */,
@@ -297,10 +301,10 @@
 				DFEF51A32AC4E463009D01DD /* HighlightStore.swift in Sources */,
 				DF1883C02ABD00C200935937 /* NewHighlightView.swift in Sources */,
 				DFA957782ABDEEB700B13F7D /* Label.swift in Sources */,
-				DF7097FA2AC7D117009BD691 /* LabelView.swift in Sources */,
+				DF7097FA2AC7D117009BD691 /* LabelCardView.swift in Sources */,
 				DF7097F42AC7C9AE009BD691 /* ThemeView.swift in Sources */,
 				DF225EF82ABCF303008D0FBB /* HighlighterApp.swift in Sources */,
-				DF7097FE2AC7EEC4009BD691 /* FilterView.swift in Sources */,
+				DF7097FE2AC7EEC4009BD691 /* LabelsView.swift in Sources */,
 				DF7097F82AC7D04B009BD691 /* HighlightCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EditHighlightView: View {
     @Binding var highlight: Highlight
-    @State private var newLabelName: String = ""
+    @State private var animate: Bool = false
     @State var selectedLabel: Label = Label.sampleData[0]
     @State private var themeSelection: Theme = .sky
     var body: some View {
@@ -35,15 +35,16 @@ struct EditHighlightView: View {
                                 .tag(label)
                         }
                     }
-                    .pickerStyle(.navigationLink)
+                    .pickerStyle(.menu)
                 }
             }
         }
     }
     private func addNewLabel() {
-            // Animation is broken need to fix - Andy
             withAnimation {
                 highlight.labels.append(selectedLabel)
+                // Should probebly make highlight.labels observable somehow to remove this var - Andy
+                animate = !animate
             }
         }
 }

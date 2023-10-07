@@ -7,11 +7,11 @@
 
 import Foundation
 
-class Highlight: Identifiable, Codable {
+class Highlight: Identifiable, ObservableObject {
     let id: UUID
     var source: String
     var content: String
-    var labels: [Label]
+    @Published var labels: [Label]
 
     init(id: UUID = UUID(), source: String, content: String, labels: [Label]) {
         self.id = id

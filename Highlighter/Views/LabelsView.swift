@@ -51,7 +51,7 @@ struct LabelsView: View {
             withAnimation {
                 if !newLabelName.isEmpty {
                     let newLabel = Label(name: newLabelName)
-                    filterLabels.append(newLabel)
+                    globalLabels.items.append(newLabel)
                     newLabelName = ""
                 }
             }

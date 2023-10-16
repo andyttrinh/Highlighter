@@ -23,9 +23,9 @@ class Highlight: Identifiable, ObservableObject {
 
 extension Highlight {
     static let sampleData: [Highlight] = [
-        Highlight(source: "Instapaper", content: "This is content from Instapaper", labels: Label.sampleData),
-        Highlight(source: "CNN", content: "President Biden is protesting with UAW", labels: Label.sampleData1),
-        Highlight(source: "Youtube", content: "Mr Beast made a Squid Game Videoooo", labels: Label.sampleData2)
+        Highlight(source: "Instapaper", content: "This is content from Instapaper", labels: Label.sampleData.items),
+        Highlight(source: "CNN", content: "President Biden is protesting with UAW", labels: Label.sampleData1.items),
+        Highlight(source: "Youtube", content: "Mr Beast made a Squid Game Videoooo", labels: Label.sampleData2.items)
     ]
     
     static let empty = Highlight(source: "", content: "", labels: [])

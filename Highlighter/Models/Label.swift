@@ -7,15 +7,17 @@
 
 import Foundation
 
-class Label: Identifiable, Codable, Equatable, Hashable {
+class Label: Identifiable, Equatable, Hashable, ObservableObject, CustomStringConvertible {
     let id: UUID
     var name: String
     var theme: Theme
+    @Published var isFiltered: Bool
     
-    init(id: UUID = UUID(), name: String, theme: Theme = .sky) {
+    init(id: UUID = UUID(), name: String, theme: Theme = .sky, isFiltered: Bool = false) {
         self.id = id
         self.name = name
         self.theme = theme
+        self.isFiltered = isFiltered
     }
     
     public static func ==(lhs: Label, rhs: Label) -> Bool {
@@ -33,10 +35,14 @@ class Label: Identifiable, Codable, Equatable, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
+    
+    var description: String {
+        return self.name
+    }
 }
 
 extension Label {
-    static let sampleData = [
+    static let sampleData = Labels(items: [
         Label(name: "News", theme: .bubblegum),
         Label(name: "Inspiration", theme: .indigo),
         Label(name: "Interesting", theme: .buttercup),
@@ -45,19 +51,27 @@ extension Label {
         Label(name: "Wow", theme: .sky),
         Label(name: "Computer", theme: .navy),
         Label(name: "Classic", theme: .poppy)
-    ]
+    ])
     
-    static let sampleData1 = [
+    static let sampleData1 = Labels(items:[
         Label(name: "News", theme: .bubblegum),
         Label(name: "Inspiration", theme: .indigo),
         Label(name: "Computer", theme: .navy),
         Label(name: "Classic", theme: .poppy)
-    ]
+    ])
     
-    static let sampleData2 = [
+    static let sampleData2 = Labels(items: [
         Label(name: "Computer", theme: .navy),
         Label(name: "Classic", theme: .poppy)
-    ]
+    ])
     
     static let empty = Label(name: "", theme: .sky)
+}
+
+class Labels: ObservableObject {
+    @Published var items = [Label]()
+    
+    init(items: [Label]) {
+        self.items = items
+    }
 }

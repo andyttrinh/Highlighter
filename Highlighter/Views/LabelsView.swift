@@ -9,12 +9,27 @@ import SwiftUI
 
 struct LabelsView: View {
     @State private var newLabelName: String = ""
+    @State private var themeSelection: Theme = .sky
+    @State private var toggleVar: Bool = false
+    @ObservedObject var globalLabels: Labels
     @Binding var filterLabels: [Label]
     var body: some View {
         Form {
             Section(header: Text("Labels")) {
-                ForEach(filterLabels) { label in
-                    LabelCardView(label: label)
+                ForEach($globalLabels.items) { $label in
+                    HStack {
+                        LabelCardView(label: label)
+                        Toggle("", isOn: $label.isFiltered)
+                            .onChange(of: label.isFiltered) {oldVal, newVal in
+                                if (newVal == true) {
+                                    filterLabels.append(label)
+                                } else {
+                                    filterLabels.removeAll {$0 == label}
+                                }
+                                print(filterLabels)
+                            }
+                        
+                    }
                 }
                 .onDelete { indeces in
                     filterLabels.remove(atOffsets: indeces)
@@ -27,7 +42,7 @@ struct LabelsView: View {
                         }
                     }
                 }
-    //            ThemePicker(selection: $themeSelection)
+                ThemePicker(selection: $themeSelection)
             }
         }
     }
@@ -44,5 +59,5 @@ struct LabelsView: View {
 }
 
 #Preview {
-    LabelsView(filterLabels: .constant(Label.sampleData))
+    LabelsView(globalLabels: Label.sampleData, filterLabels: .constant([]))
 }

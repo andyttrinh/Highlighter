@@ -10,8 +10,7 @@ import SwiftUI
 struct EditHighlightView: View {
     @Binding var highlight: Highlight
     @State private var animate: Bool = false
-    @State var selectedLabel: Label = Label.sampleData[0]
-    @State private var themeSelection: Theme = .sky
+    @State var selectedLabel: Label = Label.sampleData.items[0]
     var body: some View {
         Form {
             Section(header: Text("Info")){
@@ -30,7 +29,7 @@ struct EditHighlightView: View {
                         Text("Add Label")
                     }
                     Picker("", selection: $selectedLabel) {
-                        ForEach(Label.sampleData) { label in
+                        ForEach(Label.sampleData.items) { label in
                             LabelCardView(label: label)
                                 .tag(label)
                         }

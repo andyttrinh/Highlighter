@@ -13,6 +13,7 @@ struct HighlightsView: View {
     @State var isPresentingNewHighlightView = false
     @State var isPresentingNewFilterView = false
     @State var labelFilter: [Label] = []
+    @ObservedObject var globalLabels = Label.sampleData
     let saveAction: ()->Void
     
     var body: some View {
@@ -51,7 +52,7 @@ struct HighlightsView: View {
                 isPresentingNewHighlightView: $isPresentingNewHighlightView)
         }
         .sheet(isPresented: $isPresentingNewFilterView) {
-            LabelsView(filterLabels: $labelFilter)
+            LabelsView(globalLabels: globalLabels, filterLabels: $labelFilter)
         }
         .onChange(of: scenePhase) { oldCount, newCount in
             if newCount == .inactive { saveAction() }

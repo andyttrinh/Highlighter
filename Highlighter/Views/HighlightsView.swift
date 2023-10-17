@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HighlightsView: View {
-    @Binding var highlights: [Highlight]
+    @ObservedObject var highlights: Highlights
     @Environment(\.scenePhase) private var scenePhase
     @State var isPresentingNewHighlightView = false
     @State var isPresentingNewFilterView = false
@@ -19,14 +19,14 @@ struct HighlightsView: View {
     var body: some View {
         NavigationStack {
             List() {
-                ForEach($highlights.filter { highlight in filterFunc(highlight: highlight.wrappedValue)}) {$highlight in
-                    NavigationLink(destination: EditHighlightView(highlight: $highlight)){
-                        HighlightCardView(highlight: $highlight)
+                ForEach(highlights.items.filter { highlight in filterFunc(highlight: highlight)}) {highlight in
+                    NavigationLink(destination: EditHighlightView(highlight: highlight)){
+                        HighlightCardView(highlight: highlight)
                     }
                 }
                 .onDelete(perform: { indexSet in
                     for index in indexSet {
-                        highlights.remove(at: index)
+                        highlights.items.remove(at: index)
                     }
                 })
                 
@@ -48,7 +48,7 @@ struct HighlightsView: View {
         }
         .sheet(isPresented: $isPresentingNewHighlightView) {
             NewHighlightView(
-                highlights: $highlights,
+                highlights: highlights,
                 isPresentingNewHighlightView: $isPresentingNewHighlightView)
         }
         .sheet(isPresented: $isPresentingNewFilterView) {
@@ -65,5 +65,5 @@ struct HighlightsView: View {
 }
 
 #Preview {
-    HighlightsView(highlights: .constant(Highlight.sampleData), saveAction: {})
+    HighlightsView(highlights: Highlight.sampleData, saveAction: {})
 }

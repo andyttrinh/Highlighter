@@ -22,11 +22,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct HighlighterApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 //    @StateObject private var store = HighlightStore()
-    @State private var highlights = Highlight.sampleData
+    @ObservedObject private var highlights = Highlight.sampleData
     
     var body: some Scene {
         WindowGroup {
-            HighlightsView(highlights: $highlights) {
+            HighlightsView(highlights: highlights) {
 //                Task {
 //                    do {
 //                        try await store.save(highlights: store.highlights)

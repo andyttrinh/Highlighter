@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct NewHighlightView: View {
-    @State var newHighlight: Highlight = Highlight.empty
-    @Binding var highlights: [Highlight]
+    @ObservedObject var newHighlight: Highlight = Highlight.empty
+    @ObservedObject var highlights: Highlights
     @Binding var isPresentingNewHighlightView: Bool
     var body: some View {
         NavigationStack {
-            EditHighlightView(highlight: $newHighlight)
+            EditHighlightView(highlight: newHighlight)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Dismiss") {
@@ -22,7 +22,7 @@ struct NewHighlightView: View {
                     }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Add") {
-                            highlights.append(newHighlight)
+                            highlights.items.append(newHighlight)
                             isPresentingNewHighlightView = false
                         }
                     }
@@ -33,5 +33,5 @@ struct NewHighlightView: View {
 }
 
 #Preview {
-    NewHighlightView(highlights: .constant(Highlight.sampleData), isPresentingNewHighlightView: .constant(true))
+    NewHighlightView(highlights: Highlight.sampleData, isPresentingNewHighlightView: .constant(true))
 }

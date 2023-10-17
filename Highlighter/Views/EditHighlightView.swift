@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditHighlightView: View {
-    @Binding var highlight: Highlight
+    @ObservedObject var highlight: Highlight
     @State private var animate: Bool = false
     @State var selectedLabel: Label = Label.sampleData.items[0]
     var body: some View {
@@ -49,5 +49,5 @@ struct EditHighlightView: View {
 }
 
 #Preview {
-    EditHighlightView(highlight: .constant(Highlight.sampleData[0]))
+    EditHighlightView(highlight: Highlight.sampleData.items[0])
 }

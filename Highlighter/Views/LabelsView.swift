@@ -50,7 +50,7 @@ struct LabelsView: View {
     private func addNewLabel() {
             withAnimation {
                 if !newLabelName.isEmpty {
-                    let newLabel = Label(name: newLabelName)
+                    let newLabel = Label(name: newLabelName, theme: themeSelection)
                     globalLabels.items.append(newLabel)
                     newLabelName = ""
                 }

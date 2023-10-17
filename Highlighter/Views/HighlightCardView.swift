@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HighlightCardView: View {
-    @Binding var highlight: Highlight
+    @ObservedObject var highlight: Highlight
     
     var body: some View {
         VStack {
@@ -25,5 +25,5 @@ struct HighlightCardView: View {
 }
 
 #Preview {
-    HighlightCardView(highlight: .constant(Highlight.sampleData[0]))
+    HighlightCardView(highlight: Highlight.sampleData.items[0])
 }

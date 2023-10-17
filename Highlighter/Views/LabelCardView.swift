@@ -20,5 +20,5 @@ struct LabelCardView: View {
 }
 
 #Preview {
-    LabelCardView(label: Highlight.sampleData[0].labels[0])
+    LabelCardView(label: Highlight.sampleData.items[0].labels[0])
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewHighlightView: View {
-    @ObservedObject var newHighlight: Highlight = Highlight.empty
+    @ObservedObject var newHighlight: Highlight = Highlight.makeEmptyHighlight()
     @ObservedObject var highlights: Highlights
     @Binding var isPresentingNewHighlightView: Bool
     var body: some View {

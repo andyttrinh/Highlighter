@@ -23,12 +23,13 @@ class Highlight: Identifiable, ObservableObject {
 
 extension Highlight {
     static let sampleData: Highlights = Highlights(items: [
-        Highlight(source: "Instapaper", content: "This is content from Instapaper", labels: Label.sampleData.items),
-        Highlight(source: "CNN", content: "President Biden is protesting with UAW", labels: Label.sampleData1.items),
-        Highlight(source: "Youtube", content: "Mr Beast made a Squid Game Videoooo", labels: Label.sampleData2.items)
+        Highlight(source: "Martin Luther King Jr", content: "I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character.", labels: Label.sampleData.items),
+        Highlight(source: "Abraham Lincoln", content: "You can fool all of the people some of the time, and some of the people all of the time, but you can't fool all of the people all of the time.", labels: Label.sampleData1.items),
+        Highlight(source: "Mahatma Gandhi", content: "You must be the change you wish to see in the world.", labels: Label.sampleData2.items)
     ])
     
     static let empty = Highlight(source: "", content: "", labels: [])
+    static func makeEmptyHighlight() -> Highlight { Highlight(source: "", content: "", labels: [])}
 }
 
 class Highlights: ObservableObject {

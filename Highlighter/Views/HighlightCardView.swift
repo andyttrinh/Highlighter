@@ -11,14 +11,22 @@ struct HighlightCardView: View {
     @ObservedObject var highlight: Highlight
     
     var body: some View {
-        VStack {
-            Text("Source: \(highlight.source)")
-            Text("Content: \(highlight.content)")
-//            HStack {
-//                ForEach(highlight.labels) { label in
-//                    LabelView(label: label)
-//                }
-//            }
+        VStack(alignment: .leading) {
+            Text("\(highlight.content)")
+            Spacer()
+            HStack {
+                HStack () {
+                    ForEach(highlight.labels) { label in
+                        LabelCardView(label: label)
+    //                        .scaleEffect(0.1)
+                            .frame(width: 1, height: 1)
+                    }
+                }
+                Spacer()
+                Text("\(highlight.source)")
+
+            }
+            Spacer()
             
         }
     }

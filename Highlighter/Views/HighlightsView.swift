@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct HighlightsView: View {
     @ObservedObject var highlights: Highlights
@@ -25,7 +26,16 @@ struct HighlightsView: View {
                 }
                 .onDelete(perform: { indexSet in
                     for index in indexSet {
+                        let highlightIdToBeRemoved = highlights.items[index].id
                         highlights.items.remove(at: index)
+                        // delete from firebase 
+                        deleteHighlight(withId: highlightIdToBeRemoved) { error in
+                            if let error = error {
+                                    print("Failed to delete highlight: \(error.localizedDescription)")
+                                } else {
+                                    print("Highlight successfully deleted!")
+                                }
+                        }
                     }
                 })
                 
@@ -61,6 +71,15 @@ struct HighlightsView: View {
     private func filterFunc(highlight: Highlight) -> Bool {
         return labelFilter.allSatisfy(highlight.labels.contains(_:))
     }
+    
+    func deleteHighlight(withId id: UUID, completion: @escaping (Error?) -> Void) {
+        let dbRef = Database.database().reference().child("highlights").child(id.uuidString)
+        
+        dbRef.removeValue { error, _ in
+            completion(error)
+        }
+    }
+
 }
 
 #Preview {

@@ -88,6 +88,17 @@ extension Label {
     static let empty = Label(name: "", theme: .sky)
 }
 
+extension Label {
+    func toDictionary() -> [String: Any]? {
+        guard let jsonData = try? JSONEncoder().encode(self) else {
+            return nil
+        }
+        
+        let jsonObject = try? JSONSerialization.jsonObject(with: jsonData, options: [])
+        return jsonObject as? [String: Any]
+    }
+}
+
 class Labels: ObservableObject {
     @Published var items = [Label]()
     

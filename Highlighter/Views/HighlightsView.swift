@@ -14,7 +14,6 @@ struct HighlightsView: View {
     @State var isPresentingNewFilterView = false
     @State var labelFilter: [Label] = []
     @ObservedObject var globalLabels = Label.sampleData
-    let saveAction: ()->Void
     
     var body: some View {
         NavigationStack {
@@ -55,7 +54,7 @@ struct HighlightsView: View {
             LabelsView(globalLabels: globalLabels, filterLabels: $labelFilter)
         }
         .onChange(of: scenePhase) { oldCount, newCount in
-            if newCount == .inactive { saveAction() }
+            if newCount == .inactive {  }
         }
     }
     
@@ -65,5 +64,5 @@ struct HighlightsView: View {
 }
 
 #Preview {
-    HighlightsView(highlights: Highlight.sampleData, saveAction: {})
+    HighlightsView(highlights: Highlight.sampleData)
 }

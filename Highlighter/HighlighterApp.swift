@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
+import Firebase
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -21,27 +22,37 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct HighlighterApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-//    @StateObject private var store = HighlightStore()
-    @ObservedObject private var highlights = Highlight.sampleData
-    
+    @StateObject private var highlights = Highlights(items: [])
+
     var body: some Scene {
         WindowGroup {
-            HighlightsView(highlights: highlights) {
-//                Task {
-//                    do {
-//                        try await store.save(highlights: store.highlights)
-//                    } catch {
-//                        fatalError(error.localizedDescription)
-//                    }
-//                }
+            HighlightsView(highlights: highlights)
+                .onAppear {
+                    fetchAllHighlights { fetchedHighlights in
+                        self.highlights.items = fetchedHighlights
+                        print(fetchedHighlights)
+                    }
+                }
+        }
+    }
+    
+    func fetchAllHighlights(completion: @escaping ([Highlight]) -> Void) {
+        let dbRef = Database.database().reference().child("highlights")
+        
+        dbRef.observeSingleEvent(of: .value) { (snapshot) in
+            guard let value = snapshot.value as? [String: [String: Any]] else {
+                completion([])
+                return
             }
-//                .task {
-//                    do {
-//                        try await store.load()
-//                    } catch {
-//                        fatalError(error.localizedDescription)
-//                    }
-//                }
+            
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                let highlightsDict = try JSONDecoder().decode([String: Highlight].self, from: jsonData)
+                completion(Array(highlightsDict.values))
+            } catch {
+                print("Error decoding highlights: \(error)")
+                completion([])
+            }
         }
     }
 }

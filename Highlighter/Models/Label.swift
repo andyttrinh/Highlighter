@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Label: Identifiable, Equatable, Hashable, ObservableObject, CustomStringConvertible {
+class Label: Identifiable, Equatable, Hashable, ObservableObject, CustomStringConvertible, Codable {
     let id: UUID
     var name: String
     var theme: Theme
@@ -39,6 +39,26 @@ class Label: Identifiable, Equatable, Hashable, ObservableObject, CustomStringCo
     var description: String {
         return self.name
     }
+    
+    enum CodingKeys: String, CodingKey {
+            case id, name, theme, isFiltered
+        }
+        
+        func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(id, forKey: .id)
+            try container.encode(name, forKey: .name)
+            try container.encode(theme, forKey: .theme)
+            try container.encode(isFiltered, forKey: .isFiltered)
+        }
+        
+        required init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            id = try container.decode(UUID.self, forKey: .id)
+            name = try container.decode(String.self, forKey: .name)
+            theme = try container.decode(Theme.self, forKey: .theme)
+            isFiltered = try container.decode(Bool.self, forKey: .isFiltered)
+        }
 }
 
 extension Label {

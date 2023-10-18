@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Highlight: Identifiable, ObservableObject {
+class Highlight: Codable, Identifiable, ObservableObject {
     let id: UUID
     var source: String
     var content: String
@@ -19,6 +19,26 @@ class Highlight: Identifiable, ObservableObject {
         self.content = content
         self.labels = labels
     }
+    
+    enum CodingKeys: String, CodingKey {
+            case id, source, content, labels
+        }
+        
+        func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(id, forKey: .id)
+            try container.encode(source, forKey: .source)
+            try container.encode(content, forKey: .content)
+            try container.encode(labels, forKey: .labels)
+        }
+        
+        required init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            id = try container.decode(UUID.self, forKey: .id)
+            source = try container.decode(String.self, forKey: .source)
+            content = try container.decode(String.self, forKey: .content)
+            labels = try container.decode([Label].self, forKey: .labels)
+        }
 }
 
 extension Highlight {

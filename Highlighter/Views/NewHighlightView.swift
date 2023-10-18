@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct NewHighlightView: View {
     @ObservedObject var newHighlight: Highlight = Highlight.makeEmptyHighlight()
@@ -23,11 +24,26 @@ struct NewHighlightView: View {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Add") {
                             highlights.items.append(newHighlight)
+                            storeHighlight(highlight: newHighlight)
                             isPresentingNewHighlightView = false
                         }
                     }
                 }
 
+        }
+    }
+    
+    func storeHighlight(highlight: Highlight) {
+        let dbRef = Database.database().reference()
+        let highlightRef = dbRef.child("highlights").child(highlight.id.uuidString)
+        
+        do {
+            let data = try JSONEncoder().encode(highlight)
+            if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] {
+                highlightRef.setValue(json)
+            }
+        } catch {
+            print("Error encoding highlight: \(error)")
         }
     }
 }

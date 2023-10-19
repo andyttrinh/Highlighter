@@ -46,7 +46,7 @@ struct EditHighlightView: View {
                 // Should probebly make highlight.labels observable somehow to remove this var - Andy
                 animate = !animate
                 
-                addLabelToStoreHighlight(toHighlight: highlight.id, label: selectedLabel) { error in
+                updateLabels(inHighlight: highlight.id, newLabel: selectedLabel) { error in
                     if let error = error {
                             print("Failed to add label: \(error.localizedDescription)")
                         } else {
@@ -56,22 +56,33 @@ struct EditHighlightView: View {
             }
         }
     
-    func addLabelToStoreHighlight(toHighlight highlightID: UUID, label: Label, completion: @escaping (Error?) -> Void) {
+    func updateLabels(inHighlight highlightID: UUID, newLabel: Label, completion: @escaping (Error?) -> Void) {
         let dbRef = Database.database().reference().child("highlights").child(highlightID.uuidString).child("labels")
-
-        // Convert the Label instance to a dictionary
-        guard let labelData = label.toDictionary() else {
-            completion(NSError(domain: "HighlighterApp", code: 1001, userInfo: ["message": "Failed to encode Label."]))
-            return
-        }
-
-        // Create a new child with a unique key and set its value to the label data
-//       Need to convert labels to a map
-        let newLabelRef = dbRef.child("")
-        newLabelRef.setValue(labelData) { error, _ in
-            completion(error)
+        
+        // Fetch the current labels from the database
+        dbRef.observeSingleEvent(of: .value) { (snapshot) in
+            var currentLabels: [[String: Any]] = []
+            
+            if let existingLabels = snapshot.value as? [[String: Any]] {
+                currentLabels = existingLabels
+            }
+            
+            // Convert the new Label instance to a dictionary
+            guard let labelData = newLabel.toDictionary() else {
+                completion(NSError(domain: "HighlighterApp", code: 1001, userInfo: ["message": "Failed to encode Label."]))
+                return
+            }
+            
+            // Append the new label to the current labels
+            currentLabels.append(labelData)
+            
+            // Write the entire modified labels array back to the database
+            dbRef.setValue(currentLabels) { error, _ in
+                completion(error)
+            }
         }
     }
+
 
 }
 

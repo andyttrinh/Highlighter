@@ -19,11 +19,20 @@ struct EditHighlightView: View {
                 TextField("Content", text: $highlight.content, axis: .vertical)
             }
             Section(header: Text("Labels")) {
-                ForEach(highlight.labels) { label in
+                ForEach(highlight.labels!) { label in
                     LabelCardView(label: label)
                 }
                 .onDelete { indeces in
-                    highlight.labels.remove(atOffsets: indeces)
+                    for index in indeces {
+                        deleteLabel(fromHighlight: highlight.id, labelIdx: index) { error in
+                            if let error = error {
+                                    print("Failed to add label: \(error.localizedDescription)")
+                                } else {
+                                    print("Label successfully deleted!")
+                                }
+                        }
+                    }
+                    highlight.labels!.remove(atOffsets: indeces)
                 }
                 HStack {
                     Button(action: addNewLabel) {
@@ -42,7 +51,7 @@ struct EditHighlightView: View {
     }
     private func addNewLabel() {
             withAnimation {
-                highlight.labels.append(selectedLabel)
+                highlight.labels!.append(selectedLabel)
                 // Should probebly make highlight.labels observable somehow to remove this var - Andy
                 animate = !animate
                 
@@ -80,6 +89,20 @@ struct EditHighlightView: View {
             dbRef.setValue(currentLabels) { error, _ in
                 completion(error)
             }
+        }
+    }
+    
+    func deleteLabel(fromHighlight highlightID: UUID, labelIdx: Int, completion: @escaping (Error?) -> Void) {
+        // Reference to the specific label within a highlight
+        let labelRef = Database.database().reference()
+            .child("highlights")
+            .child(highlightID.uuidString)
+            .child("labels")
+            .child(String(labelIdx))
+
+        // Remove the label from Firebase
+        labelRef.removeValue { error, _ in
+            completion(error)
         }
     }
 

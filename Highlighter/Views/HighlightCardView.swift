@@ -16,7 +16,7 @@ struct HighlightCardView: View {
             Spacer()
             HStack {
                 HStack () {
-                    ForEach(highlight.labels) { label in
+                    ForEach(highlight.labels!) { label in
                         LabelCardView(label: label)
     //                        .scaleEffect(0.1)
                             .frame(width: 1, height: 1)

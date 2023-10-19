@@ -69,7 +69,7 @@ struct HighlightsView: View {
     }
     
     private func filterFunc(highlight: Highlight) -> Bool {
-        return labelFilter.allSatisfy(highlight.labels.contains(_:))
+        return labelFilter.allSatisfy(highlight.labels!.contains(_:))
     }
     
     func deleteHighlight(withId id: UUID, completion: @escaping (Error?) -> Void) {
@@ -79,6 +79,7 @@ struct HighlightsView: View {
             completion(error)
         }
     }
+    
 
 }
 

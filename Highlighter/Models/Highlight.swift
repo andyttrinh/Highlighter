@@ -11,7 +11,7 @@ class Highlight: Codable, Identifiable, ObservableObject {
     let id: UUID
     var source: String
     var content: String
-    @Published var labels: [Label]
+    @Published var labels: [Label]?
 
     init(id: UUID = UUID(), source: String, content: String, labels: [Label]) {
         self.id = id
@@ -37,8 +37,11 @@ class Highlight: Codable, Identifiable, ObservableObject {
             id = try container.decode(UUID.self, forKey: .id)
             source = try container.decode(String.self, forKey: .source)
             content = try container.decode(String.self, forKey: .content)
-            labels = try container.decode([Label].self, forKey: .labels)
+            
+            // Using decodeIfPresent for the labels key
+            labels = try container.decodeIfPresent([Label].self, forKey: .labels) ?? []
         }
+
 }
 
 extension Highlight {

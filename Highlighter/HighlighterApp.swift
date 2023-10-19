@@ -48,11 +48,20 @@ struct HighlighterApp: App {
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
                 let highlightsDict = try JSONDecoder().decode([String: Highlight].self, from: jsonData)
+
+                // Provide default values for any nil labels arrays
+                for (key, highlight) in highlightsDict {
+                    if highlight.labels == nil {
+                        highlightsDict[key]?.labels = []
+                    }
+                }
+
                 completion(Array(highlightsDict.values))
             } catch {
                 print("Error decoding highlights: \(error)")
                 completion([])
             }
+
         }
     }
 }

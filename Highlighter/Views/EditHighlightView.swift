@@ -23,16 +23,16 @@ struct EditHighlightView: View {
                     LabelCardView(label: label)
                 }
                 .onDelete { indeces in
-                    for index in indeces {
-                        deleteLabel(fromHighlight: highlight.id, labelIdx: index) { error in
-                            if let error = error {
-                                    print("Failed to add label: \(error.localizedDescription)")
-                                } else {
-                                    print("Label successfully deleted!")
-                                }
-                        }
-                    }
+                    // Delete label from highlight
                     highlight.labels!.remove(atOffsets: indeces)
+                    // Then update the entire labels key in firebase
+                    updateHighlightLabels(highlightID: highlight.id, newLabels: highlight.labels!) { error in
+                        if let error = error {
+                                print("Failed to add label: \(error.localizedDescription)")
+                            } else {
+                                print("Label successfully deleted!")
+                            }
+                    }
                 }
                 HStack {
                     Button(action: addNewLabel) {
@@ -55,7 +55,7 @@ struct EditHighlightView: View {
                 // Should probebly make highlight.labels observable somehow to remove this var - Andy
                 animate = !animate
                 
-                updateLabels(inHighlight: highlight.id, newLabel: selectedLabel) { error in
+                uploadLabel(inHighlight: highlight.id, newLabel: selectedLabel) { error in
                     if let error = error {
                             print("Failed to add label: \(error.localizedDescription)")
                         } else {
@@ -65,7 +65,21 @@ struct EditHighlightView: View {
             }
         }
     
-    func updateLabels(inHighlight highlightID: UUID, newLabel: Label, completion: @escaping (Error?) -> Void) {
+    func updateHighlightLabels(highlightID: UUID, newLabels: [Label], completion: @escaping (Error?) -> Void) {
+        let dbRef = Database.database().reference().child("highlights").child(highlightID.uuidString).child("labels")
+        
+        // Convert the array of Label instances to an array of dictionaries
+        let labelsData: [[String: Any]] = newLabels.compactMap { label in
+            return label.toDictionary()
+        }
+        
+        // Update the entire 'labels' child with the new array of label data
+        dbRef.setValue(labelsData) { error, _ in
+            completion(error)
+        }
+    }
+    
+    func uploadLabel(inHighlight highlightID: UUID, newLabel: Label, completion: @escaping (Error?) -> Void) {
         let dbRef = Database.database().reference().child("highlights").child(highlightID.uuidString).child("labels")
         
         // Fetch the current labels from the database
@@ -92,19 +106,19 @@ struct EditHighlightView: View {
         }
     }
     
-    func deleteLabel(fromHighlight highlightID: UUID, labelIdx: Int, completion: @escaping (Error?) -> Void) {
-        // Reference to the specific label within a highlight
-        let labelRef = Database.database().reference()
-            .child("highlights")
-            .child(highlightID.uuidString)
-            .child("labels")
-            .child(String(labelIdx))
-
-        // Remove the label from Firebase
-        labelRef.removeValue { error, _ in
-            completion(error)
-        }
-    }
+//    func deleteLabel(fromHighlight highlightID: UUID, labelIdx: Int, completion: @escaping (Error?) -> Void) {
+//        // Reference to the specific label within a highlight
+//        let labelRef = Database.database().reference()
+//            .child("highlights")
+//            .child(highlightID.uuidString)
+//            .child("labels")
+//            .child(String(labelIdx))
+//
+//        // Remove the label from Firebase
+//        labelRef.removeValue { error, _ in
+//            completion(error)
+//        }
+//    }
 
 
 }

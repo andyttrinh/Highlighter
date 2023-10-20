@@ -13,7 +13,7 @@ public class Highlight: Codable, Identifiable, ObservableObject {
     public var content: String
     @Published public var labels: [Label]?
 
-    init(id: UUID = UUID(), source: String, content: String, labels: [Label]) {
+    public init(id: UUID = UUID(), source: String, content: String, labels: [Label]) {
         self.id = id
         self.source = source
         self.content = content

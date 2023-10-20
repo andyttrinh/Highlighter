@@ -37,6 +37,7 @@
 		DF9749042AE3120000005E9C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F12AC7C355009BD691 /* Theme.swift */; };
 		DF9749062AE3129800005E9C /* HighlighterShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9748E42AE311BA00005E9C /* HighlighterShared.framework */; };
 		DF9749072AE3129800005E9C /* HighlighterShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF9748E42AE311BA00005E9C /* HighlighterShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DF97490C2AE3204C00005E9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF97490B2AE3204C00005E9C /* GoogleService-Info.plist */; };
 		DFA9577B2ABDF49900B13F7D /* HighlighterShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DF1883C52ABD07E900935937 /* HighlighterShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DFEF51A32AC4E463009D01DD /* HighlightStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF51A22AC4E463009D01DD /* HighlightStore.swift */; };
 		DFFBAE562AD1136100BA9E07 /* AddLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBAE552AD1136100BA9E07 /* AddLabel.swift */; };
@@ -145,6 +146,7 @@
 		DF9748E72AE311BA00005E9C /* HighlighterShared.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = HighlighterShared.docc; sourceTree = "<group>"; };
 		DF9748ED2AE311BA00005E9C /* HighlighterSharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HighlighterSharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9748F42AE311BA00005E9C /* HighlighterSharedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlighterSharedTests.swift; sourceTree = "<group>"; };
+		DF97490B2AE3204C00005E9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DFA957772ABDEEB700B13F7D /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		DFD083B62ABDC5DA00454815 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		DFEF51A22AC4E463009D01DD /* HighlightStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightStore.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		DF1883C62ABD07E900935937 /* HighlighterShareExtension */ = {
 			isa = PBXGroup;
 			children = (
+				DF97490B2AE3204C00005E9C /* GoogleService-Info.plist */,
 				DF1883D52ABD179C00935937 /* HighlighterShareExtension.entitlements */,
 				DF1883C72ABD07E900935937 /* ShareViewController.swift */,
 				DF1883C92ABD07E900935937 /* MainInterface.storyboard */,
@@ -452,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF1883CB2ABD07E900935937 /* MainInterface.storyboard in Resources */,
+				DF97490C2AE3204C00005E9C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

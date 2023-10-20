@@ -27,6 +27,7 @@
 		DF7097FA2AC7D117009BD691 /* LabelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F92AC7D117009BD691 /* LabelCardView.swift */; };
 		DF7097FC2AC7D927009BD691 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097FB2AC7D927009BD691 /* NavigationView.swift */; };
 		DF7097FE2AC7EEC4009BD691 /* LabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097FD2AC7EEC4009BD691 /* LabelsView.swift */; };
+		DF9748DE2AE30E2100005E9C /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DF9748DD2AE30E2100005E9C /* FirebaseDatabaseSwift */; };
 		DFA957782ABDEEB700B13F7D /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA957772ABDEEB700B13F7D /* Label.swift */; };
 		DFA9577B2ABDF49900B13F7D /* HighlighterShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DF1883C52ABD07E900935937 /* HighlighterShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DFEF51A32AC4E463009D01DD /* HighlightStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF51A22AC4E463009D01DD /* HighlightStore.swift */; };
@@ -92,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9748DE2AE30E2100005E9C /* FirebaseDatabaseSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +206,9 @@
 			dependencies = (
 			);
 			name = HighlighterShareExtension;
+			packageProductDependencies = (
+				DF9748DD2AE30E2100005E9C /* FirebaseDatabaseSwift */,
+			);
 			productName = HighlighterShareExtension;
 			productReference = DF1883C52ABD07E900935937 /* HighlighterShareExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -629,6 +634,11 @@
 			productName = FirebaseAnalytics;
 		};
 		DF124DC32ADCC78400646A6C /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF124DC02ADCC78400646A6C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		DF9748DD2AE30E2100005E9C /* FirebaseDatabaseSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DF124DC02ADCC78400646A6C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabaseSwift;

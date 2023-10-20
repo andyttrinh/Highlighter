@@ -8,6 +8,9 @@
 import SwiftUI
 import FirebaseCore
 import Firebase
+import HighlighterShared
+
+
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {

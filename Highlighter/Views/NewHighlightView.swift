@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import HighlighterShared
 
 struct NewHighlightView: View {
     @ObservedObject var newHighlight: Highlight = Highlight.makeEmptyHighlight()

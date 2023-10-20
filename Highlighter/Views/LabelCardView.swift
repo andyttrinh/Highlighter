@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import HighlighterShared
 
 struct LabelCardView: View {
-    var label: Label
+    var label: HighlighterShared.Label
     var body: some View {
         Text(label.name)
             .padding(8)

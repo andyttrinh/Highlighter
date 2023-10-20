@@ -7,13 +7,13 @@
 
 import Foundation
 
-class Label: Identifiable, Equatable, Hashable, ObservableObject, CustomStringConvertible, Codable {
-    let id: UUID
-    var name: String
-    var theme: Theme
-    @Published var isFiltered: Bool
+public class Label: Identifiable, Equatable, Hashable, ObservableObject, CustomStringConvertible, Codable {
+    public let id: UUID
+    public var name: String
+    public var theme: Theme
+    @Published public var isFiltered: Bool
     
-    init(id: UUID = UUID(), name: String, theme: Theme = .sky, isFiltered: Bool = false) {
+    public init(id: UUID = UUID(), name: String, theme: Theme = .sky, isFiltered: Bool = false) {
         self.id = id
         self.name = name
         self.theme = theme
@@ -32,19 +32,19 @@ class Label: Identifiable, Equatable, Hashable, ObservableObject, CustomStringCo
         return lhs.name == rhs
     }
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
     
-    var description: String {
+    public var description: String {
         return self.name
     }
     
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
             case id, name, theme, isFiltered
         }
         
-        func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
             var container = encoder.container(keyedBy: CodingKeys.self)
             try container.encode(id, forKey: .id)
             try container.encode(name, forKey: .name)
@@ -52,7 +52,7 @@ class Label: Identifiable, Equatable, Hashable, ObservableObject, CustomStringCo
             try container.encode(isFiltered, forKey: .isFiltered)
         }
         
-        required init(from decoder: Decoder) throws {
+    required public init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             id = try container.decode(UUID.self, forKey: .id)
             name = try container.decode(String.self, forKey: .name)
@@ -62,7 +62,7 @@ class Label: Identifiable, Equatable, Hashable, ObservableObject, CustomStringCo
 }
 
 extension Label {
-    static let sampleData = Labels(items: [
+    public static let sampleData = Labels(items: [
         Label(name: "News", theme: .bubblegum),
         Label(name: "Inspiration", theme: .indigo),
         Label(name: "Interesting", theme: .buttercup),
@@ -73,23 +73,23 @@ extension Label {
         Label(name: "Classic", theme: .poppy)
     ])
     
-    static let sampleData1 = Labels(items:[
+    public static let sampleData1 = Labels(items:[
         Label(name: "News", theme: .bubblegum),
         Label(name: "Inspiration", theme: .indigo),
         Label(name: "Computer", theme: .navy),
         Label(name: "Classic", theme: .poppy)
     ])
     
-    static let sampleData2 = Labels(items: [
+    public static let sampleData2 = Labels(items: [
         Label(name: "Computer", theme: .navy),
         Label(name: "Classic", theme: .poppy)
     ])
     
-    static let empty = Label(name: "", theme: .sky)
+    public static let empty = Label(name: "", theme: .sky)
 }
 
 extension Label {
-    func toDictionary() -> [String: Any]? {
+    public func toDictionary() -> [String: Any]? {
         guard let jsonData = try? JSONEncoder().encode(self) else {
             return nil
         }
@@ -99,10 +99,10 @@ extension Label {
     }
 }
 
-class Labels: ObservableObject {
-    @Published var items = [Label]()
+public class Labels: ObservableObject {
+    @Published public var items = [Label]()
     
-    init(items: [Label]) {
+    public init(items: [Label]) {
         self.items = items
     }
 }

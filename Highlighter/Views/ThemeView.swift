@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HighlighterShared
 
 struct ThemeView: View {
     let theme: Theme

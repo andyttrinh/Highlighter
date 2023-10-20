@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import HighlighterShared
+
 
 struct HighlightCardView: View {
     @ObservedObject var highlight: Highlight

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HighlighterShared
 
 struct ThemePicker: View {
     @Binding var selection: Theme

@@ -7,11 +7,13 @@
 
 import SwiftUI
 import Firebase
+import HighlighterShared
+
 
 struct EditHighlightView: View {
     @ObservedObject var highlight: Highlight
     @State private var animate: Bool = false
-    @State var selectedLabel: Label = Label.sampleData.items[0]
+    @State var selectedLabel: HighlighterShared.Label = HighlighterShared.Label.sampleData.items[0]
     var body: some View {
         Form {
             Section(header: Text("Info")){
@@ -30,7 +32,7 @@ struct EditHighlightView: View {
                         if let error = error {
                                 print("Failed to add label: \(error.localizedDescription)")
                             } else {
-                                print("Label successfully deleted!")
+                                print("HighlighterShared.Label successfully deleted!")
                             }
                     }
                 }
@@ -39,7 +41,7 @@ struct EditHighlightView: View {
                         Text("Add Label")
                     }
                     Picker("", selection: $selectedLabel) {
-                        ForEach(Label.sampleData.items) { label in
+                        ForEach(HighlighterShared.Label.sampleData.items) { label in
                             LabelCardView(label: label)
                                 .tag(label)
                         }
@@ -59,16 +61,16 @@ struct EditHighlightView: View {
                     if let error = error {
                             print("Failed to add label: \(error.localizedDescription)")
                         } else {
-                            print("Label successfully added!")
+                            print("HighlighterShared.Label successfully added!")
                         }
                 }
             }
         }
     
-    func updateHighlightLabels(highlightID: UUID, newLabels: [Label], completion: @escaping (Error?) -> Void) {
+    func updateHighlightLabels(highlightID: UUID, newLabels: [HighlighterShared.Label], completion: @escaping (Error?) -> Void) {
         let dbRef = Database.database().reference().child("highlights").child(highlightID.uuidString).child("labels")
         
-        // Convert the array of Label instances to an array of dictionaries
+        // Convert the array of HighlighterShared.Label instances to an array of dictionaries
         let labelsData: [[String: Any]] = newLabels.compactMap { label in
             return label.toDictionary()
         }
@@ -79,7 +81,7 @@ struct EditHighlightView: View {
         }
     }
     
-    func uploadLabel(inHighlight highlightID: UUID, newLabel: Label, completion: @escaping (Error?) -> Void) {
+    func uploadLabel(inHighlight highlightID: UUID, newLabel: HighlighterShared.Label, completion: @escaping (Error?) -> Void) {
         let dbRef = Database.database().reference().child("highlights").child(highlightID.uuidString).child("labels")
         
         // Fetch the current labels from the database
@@ -90,9 +92,9 @@ struct EditHighlightView: View {
                 currentLabels = existingLabels
             }
             
-            // Convert the new Label instance to a dictionary
+            // Convert the new HighlighterShared.Label instance to a dictionary
             guard let labelData = newLabel.toDictionary() else {
-                completion(NSError(domain: "HighlighterApp", code: 1001, userInfo: ["message": "Failed to encode Label."]))
+                completion(NSError(domain: "HighlighterApp", code: 1001, userInfo: ["message": "Failed to encode HighlighterShared.Label."]))
                 return
             }
             

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HighlighterShared
 
 struct AddLabel: View {
     @State private var newLabelName: String = ""

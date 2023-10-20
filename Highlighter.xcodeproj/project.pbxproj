@@ -19,8 +19,6 @@
 		DF225EFF2ABCF304008D0FBB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF225EFE2ABCF304008D0FBB /* Preview Assets.xcassets */; };
 		DF225F0A2ABCF3F2008D0FBB /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF225F092ABCF3F2008D0FBB /* PreviewContainer.swift */; };
 		DF225F0C2ABCF660008D0FBB /* EditHighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF225F0B2ABCF660008D0FBB /* EditHighlightView.swift */; };
-		DF6AD8E72ABDF9E100B8DA0A /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6AD8E62ABDF9E100B8DA0A /* Highlight.swift */; };
-		DF7097F22AC7C355009BD691 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F12AC7C355009BD691 /* Theme.swift */; };
 		DF7097F42AC7C9AE009BD691 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F32AC7C9AE009BD691 /* ThemeView.swift */; };
 		DF7097F62AC7CA4C009BD691 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F52AC7CA4C009BD691 /* ThemePicker.swift */; };
 		DF7097F82AC7D04B009BD691 /* HighlightCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F72AC7D04B009BD691 /* HighlightCardView.swift */; };
@@ -28,13 +26,51 @@
 		DF7097FC2AC7D927009BD691 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097FB2AC7D927009BD691 /* NavigationView.swift */; };
 		DF7097FE2AC7EEC4009BD691 /* LabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097FD2AC7EEC4009BD691 /* LabelsView.swift */; };
 		DF9748DE2AE30E2100005E9C /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DF9748DD2AE30E2100005E9C /* FirebaseDatabaseSwift */; };
-		DFA957782ABDEEB700B13F7D /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA957772ABDEEB700B13F7D /* Label.swift */; };
+		DF9748E82AE311BA00005E9C /* HighlighterShared.docc in Sources */ = {isa = PBXBuildFile; fileRef = DF9748E72AE311BA00005E9C /* HighlighterShared.docc */; };
+		DF9748EE2AE311BA00005E9C /* HighlighterShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9748E42AE311BA00005E9C /* HighlighterShared.framework */; };
+		DF9748F52AE311BA00005E9C /* HighlighterSharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9748F42AE311BA00005E9C /* HighlighterSharedTests.swift */; };
+		DF9748F62AE311BA00005E9C /* HighlighterShared.h in Headers */ = {isa = PBXBuildFile; fileRef = DF9748E62AE311BA00005E9C /* HighlighterShared.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF9748F92AE311BA00005E9C /* HighlighterShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9748E42AE311BA00005E9C /* HighlighterShared.framework */; };
+		DF9748FA2AE311BA00005E9C /* HighlighterShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF9748E42AE311BA00005E9C /* HighlighterShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DF9749022AE3120000005E9C /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6AD8E62ABDF9E100B8DA0A /* Highlight.swift */; };
+		DF9749032AE3120000005E9C /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA957772ABDEEB700B13F7D /* Label.swift */; };
+		DF9749042AE3120000005E9C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F12AC7C355009BD691 /* Theme.swift */; };
+		DF9749062AE3129800005E9C /* HighlighterShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9748E42AE311BA00005E9C /* HighlighterShared.framework */; };
+		DF9749072AE3129800005E9C /* HighlighterShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF9748E42AE311BA00005E9C /* HighlighterShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DFA9577B2ABDF49900B13F7D /* HighlighterShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DF1883C52ABD07E900935937 /* HighlighterShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DFEF51A32AC4E463009D01DD /* HighlightStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF51A22AC4E463009D01DD /* HighlightStore.swift */; };
 		DFFBAE562AD1136100BA9E07 /* AddLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBAE552AD1136100BA9E07 /* AddLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DF9748EF2AE311BA00005E9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF225EEC2ABCF303008D0FBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF9748E32AE311BA00005E9C;
+			remoteInfo = HighlighterShared;
+		};
+		DF9748F12AE311BA00005E9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF225EEC2ABCF303008D0FBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF225EF32ABCF303008D0FBB;
+			remoteInfo = Highlighter;
+		};
+		DF9748F72AE311BA00005E9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF225EEC2ABCF303008D0FBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF9748E32AE311BA00005E9C;
+			remoteInfo = HighlighterShared;
+		};
+		DF9749082AE3129800005E9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF225EEC2ABCF303008D0FBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF9748E32AE311BA00005E9C;
+			remoteInfo = HighlighterShared;
+		};
 		DFA957792ABDF46B00B13F7D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DF225EEC2ABCF303008D0FBB /* Project object */;
@@ -54,6 +90,28 @@
 				DFA9577B2ABDF49900B13F7D /* HighlighterShareExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF9748FE2AE311BA00005E9C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DF9748FA2AE311BA00005E9C /* HighlighterShared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF97490A2AE3129800005E9C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DF9749072AE3129800005E9C /* HighlighterShared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -82,6 +140,11 @@
 		DF7097F92AC7D117009BD691 /* LabelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCardView.swift; sourceTree = "<group>"; };
 		DF7097FB2AC7D927009BD691 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		DF7097FD2AC7EEC4009BD691 /* LabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelsView.swift; sourceTree = "<group>"; };
+		DF9748E42AE311BA00005E9C /* HighlighterShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HighlighterShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF9748E62AE311BA00005E9C /* HighlighterShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HighlighterShared.h; sourceTree = "<group>"; };
+		DF9748E72AE311BA00005E9C /* HighlighterShared.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = HighlighterShared.docc; sourceTree = "<group>"; };
+		DF9748ED2AE311BA00005E9C /* HighlighterSharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HighlighterSharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF9748F42AE311BA00005E9C /* HighlighterSharedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlighterSharedTests.swift; sourceTree = "<group>"; };
 		DFA957772ABDEEB700B13F7D /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		DFD083B62ABDC5DA00454815 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		DFEF51A22AC4E463009D01DD /* HighlightStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightStore.swift; sourceTree = "<group>"; };
@@ -94,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF9748DE2AE30E2100005E9C /* FirebaseDatabaseSwift in Frameworks */,
+				DF9749062AE3129800005E9C /* HighlighterShared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +167,22 @@
 			files = (
 				DF124DC42ADCC78400646A6C /* FirebaseDatabaseSwift in Frameworks */,
 				DF124DC22ADCC78400646A6C /* FirebaseAnalytics in Frameworks */,
+				DF9748F92AE311BA00005E9C /* HighlighterShared.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF9748E12AE311BA00005E9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF9748EA2AE311BA00005E9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF9748EE2AE311BA00005E9C /* HighlighterShared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +206,10 @@
 				DFD083B52ABDC5DA00454815 /* Model.xcdatamodeld */,
 				DF225EF62ABCF303008D0FBB /* Highlighter */,
 				DF1883C62ABD07E900935937 /* HighlighterShareExtension */,
+				DF9748E52AE311BA00005E9C /* HighlighterShared */,
+				DF9748F32AE311BA00005E9C /* HighlighterSharedTests */,
 				DF225EF52ABCF303008D0FBB /* Products */,
+				DF9749052AE3129800005E9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +218,8 @@
 			children = (
 				DF225EF42ABCF303008D0FBB /* Highlighter.app */,
 				DF1883C52ABD07E900935937 /* HighlighterShareExtension.appex */,
+				DF9748E42AE311BA00005E9C /* HighlighterShared.framework */,
+				DF9748ED2AE311BA00005E9C /* HighlighterSharedTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,10 +249,7 @@
 		DF225F052ABCF33D008D0FBB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DF7097F12AC7C355009BD691 /* Theme.swift */,
 				DF225F092ABCF3F2008D0FBB /* PreviewContainer.swift */,
-				DFA957772ABDEEB700B13F7D /* Label.swift */,
-				DF6AD8E62ABDF9E100B8DA0A /* Highlight.swift */,
 				DFEF51A22AC4E463009D01DD /* HighlightStore.swift */,
 			);
 			path = Models;
@@ -190,7 +272,45 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		DF9748E52AE311BA00005E9C /* HighlighterShared */ = {
+			isa = PBXGroup;
+			children = (
+				DF7097F12AC7C355009BD691 /* Theme.swift */,
+				DFA957772ABDEEB700B13F7D /* Label.swift */,
+				DF6AD8E62ABDF9E100B8DA0A /* Highlight.swift */,
+				DF9748E62AE311BA00005E9C /* HighlighterShared.h */,
+				DF9748E72AE311BA00005E9C /* HighlighterShared.docc */,
+			);
+			path = HighlighterShared;
+			sourceTree = "<group>";
+		};
+		DF9748F32AE311BA00005E9C /* HighlighterSharedTests */ = {
+			isa = PBXGroup;
+			children = (
+				DF9748F42AE311BA00005E9C /* HighlighterSharedTests.swift */,
+			);
+			path = HighlighterSharedTests;
+			sourceTree = "<group>";
+		};
+		DF9749052AE3129800005E9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DF9748DF2AE311BA00005E9C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF9748F62AE311BA00005E9C /* HighlighterShared.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		DF1883C42ABD07E900935937 /* HighlighterShareExtension */ = {
@@ -200,10 +320,12 @@
 				DF1883C12ABD07E900935937 /* Sources */,
 				DF1883C22ABD07E900935937 /* Frameworks */,
 				DF1883C32ABD07E900935937 /* Resources */,
+				DF97490A2AE3129800005E9C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DF9749092AE3129800005E9C /* PBXTargetDependency */,
 			);
 			name = HighlighterShareExtension;
 			packageProductDependencies = (
@@ -221,11 +343,13 @@
 				DF225EF12ABCF303008D0FBB /* Frameworks */,
 				DF225EF22ABCF303008D0FBB /* Resources */,
 				DF1883D32ABD07E900935937 /* Embed Foundation Extensions */,
+				DF9748FE2AE311BA00005E9C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				DFA9577A2ABDF46B00B13F7D /* PBXTargetDependency */,
+				DF9748F82AE311BA00005E9C /* PBXTargetDependency */,
 			);
 			name = Highlighter;
 			packageProductDependencies = (
@@ -235,6 +359,43 @@
 			productName = Highlighter;
 			productReference = DF225EF42ABCF303008D0FBB /* Highlighter.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DF9748E32AE311BA00005E9C /* HighlighterShared */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF9748FB2AE311BA00005E9C /* Build configuration list for PBXNativeTarget "HighlighterShared" */;
+			buildPhases = (
+				DF9748DF2AE311BA00005E9C /* Headers */,
+				DF9748E02AE311BA00005E9C /* Sources */,
+				DF9748E12AE311BA00005E9C /* Frameworks */,
+				DF9748E22AE311BA00005E9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HighlighterShared;
+			productName = HighlighterShared;
+			productReference = DF9748E42AE311BA00005E9C /* HighlighterShared.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DF9748EC2AE311BA00005E9C /* HighlighterSharedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF9748FF2AE311BA00005E9C /* Build configuration list for PBXNativeTarget "HighlighterSharedTests" */;
+			buildPhases = (
+				DF9748E92AE311BA00005E9C /* Sources */,
+				DF9748EA2AE311BA00005E9C /* Frameworks */,
+				DF9748EB2AE311BA00005E9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DF9748F02AE311BA00005E9C /* PBXTargetDependency */,
+				DF9748F22AE311BA00005E9C /* PBXTargetDependency */,
+			);
+			name = HighlighterSharedTests;
+			productName = HighlighterSharedTests;
+			productReference = DF9748ED2AE311BA00005E9C /* HighlighterSharedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -251,6 +412,13 @@
 					};
 					DF225EF32ABCF303008D0FBB = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					DF9748E32AE311BA00005E9C = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					DF9748EC2AE311BA00005E9C = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = DF225EF32ABCF303008D0FBB;
 					};
 				};
 			};
@@ -272,6 +440,8 @@
 			targets = (
 				DF225EF32ABCF303008D0FBB /* Highlighter */,
 				DF1883C42ABD07E900935937 /* HighlighterShareExtension */,
+				DF9748E32AE311BA00005E9C /* HighlighterShared */,
+				DF9748EC2AE311BA00005E9C /* HighlighterSharedTests */,
 			);
 		};
 /* End PBXProject section */
@@ -295,6 +465,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DF9748E22AE311BA00005E9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF9748EB2AE311BA00005E9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -313,14 +497,11 @@
 				DF7097FC2AC7D927009BD691 /* NavigationView.swift in Sources */,
 				DF7097F62AC7CA4C009BD691 /* ThemePicker.swift in Sources */,
 				DFFBAE562AD1136100BA9E07 /* AddLabel.swift in Sources */,
-				DF7097F22AC7C355009BD691 /* Theme.swift in Sources */,
 				DF225EFA2ABCF303008D0FBB /* HighlightsView.swift in Sources */,
 				DF225F0C2ABCF660008D0FBB /* EditHighlightView.swift in Sources */,
-				DF6AD8E72ABDF9E100B8DA0A /* Highlight.swift in Sources */,
 				DF225F0A2ABCF3F2008D0FBB /* PreviewContainer.swift in Sources */,
 				DFEF51A32AC4E463009D01DD /* HighlightStore.swift in Sources */,
 				DF1883C02ABD00C200935937 /* NewHighlightView.swift in Sources */,
-				DFA957782ABDEEB700B13F7D /* Label.swift in Sources */,
 				DF7097FA2AC7D117009BD691 /* LabelCardView.swift in Sources */,
 				DF7097F42AC7C9AE009BD691 /* ThemeView.swift in Sources */,
 				DF225EF82ABCF303008D0FBB /* HighlighterApp.swift in Sources */,
@@ -329,9 +510,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DF9748E02AE311BA00005E9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF9749022AE3120000005E9C /* Highlight.swift in Sources */,
+				DF9749042AE3120000005E9C /* Theme.swift in Sources */,
+				DF9748E82AE311BA00005E9C /* HighlighterShared.docc in Sources */,
+				DF9749032AE3120000005E9C /* Label.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF9748E92AE311BA00005E9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF9748F52AE311BA00005E9C /* HighlighterSharedTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DF9748F02AE311BA00005E9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF9748E32AE311BA00005E9C /* HighlighterShared */;
+			targetProxy = DF9748EF2AE311BA00005E9C /* PBXContainerItemProxy */;
+		};
+		DF9748F22AE311BA00005E9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF225EF32ABCF303008D0FBB /* Highlighter */;
+			targetProxy = DF9748F12AE311BA00005E9C /* PBXContainerItemProxy */;
+		};
+		DF9748F82AE311BA00005E9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF9748E32AE311BA00005E9C /* HighlighterShared */;
+			targetProxy = DF9748F72AE311BA00005E9C /* PBXContainerItemProxy */;
+		};
+		DF9749092AE3129800005E9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF9748E32AE311BA00005E9C /* HighlighterShared */;
+			targetProxy = DF9749082AE3129800005E9C /* PBXContainerItemProxy */;
+		};
 		DFA9577A2ABDF46B00B13F7D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DF1883C42ABD07E900935937 /* HighlighterShareExtension */;
@@ -584,6 +804,108 @@
 			};
 			name = Release;
 		};
+		DF9748FC2AE311BA00005E9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KYNHM628PH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = andy.HighlighterShared;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DF9748FD2AE311BA00005E9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KYNHM628PH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = andy.HighlighterShared;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DF9749002AE311BA00005E9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KYNHM628PH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = andy.HighlighterSharedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Highlighter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Highlighter";
+			};
+			name = Debug;
+		};
+		DF9749012AE311BA00005E9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KYNHM628PH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = andy.HighlighterSharedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Highlighter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Highlighter";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -610,6 +932,24 @@
 			buildConfigurations = (
 				DF225F032ABCF304008D0FBB /* Debug */,
 				DF225F042ABCF304008D0FBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF9748FB2AE311BA00005E9C /* Build configuration list for PBXNativeTarget "HighlighterShared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF9748FC2AE311BA00005E9C /* Debug */,
+				DF9748FD2AE311BA00005E9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF9748FF2AE311BA00005E9C /* Build configuration list for PBXNativeTarget "HighlighterSharedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF9749002AE311BA00005E9C /* Debug */,
+				DF9749012AE311BA00005E9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

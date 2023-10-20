@@ -6,13 +6,14 @@
 //
 //
 import SwiftUI
+import HighlighterShared
 
 struct LabelsView: View {
     @State private var newLabelName: String = ""
     @State private var themeSelection: Theme = .sky
     @State private var toggleVar: Bool = false
     @ObservedObject var globalLabels: Labels
-    @Binding var filterLabels: [Label]
+    @Binding var filterLabels: [HighlighterShared.Label]
     var body: some View {
         Form {
             Section(header: Text("Labels")) {
@@ -50,7 +51,7 @@ struct LabelsView: View {
     private func addNewLabel() {
             withAnimation {
                 if !newLabelName.isEmpty {
-                    let newLabel = Label(name: newLabelName, theme: themeSelection)
+                    let newLabel = HighlighterShared.Label(name: newLabelName, theme: themeSelection)
                     globalLabels.items.append(newLabel)
                     newLabelName = ""
                 }

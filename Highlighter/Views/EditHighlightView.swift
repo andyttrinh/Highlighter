@@ -12,6 +12,7 @@ import HighlighterShared
 
 struct EditHighlightView: View {
     @ObservedObject var highlight: Highlight
+    @ObservedObject var globalLabels: Labels
     @State private var animate: Bool = false
     @State var selectedLabel: HighlighterShared.Label = HighlighterShared.Label.sampleData.items[0]
     var body: some View {
@@ -41,7 +42,7 @@ struct EditHighlightView: View {
                         Text("Add Label")
                     }
                     Picker("", selection: $selectedLabel) {
-                        ForEach(HighlighterShared.Label.sampleData.items) { label in
+                        ForEach(globalLabels.items) { label in
                             LabelCardView(label: label)
                                 .tag(label)
                         }
@@ -67,6 +68,7 @@ struct EditHighlightView: View {
             }
         }
     
+    // Will probably want to refactor this code to avoid redundancy since it appears Label views as well - Andy
     func updateHighlightLabels(highlightID: UUID, newLabels: [HighlighterShared.Label], completion: @escaping (Error?) -> Void) {
         let dbRef = Database.database().reference().child("highlights").child(highlightID.uuidString).child("labels")
         
@@ -107,24 +109,9 @@ struct EditHighlightView: View {
             }
         }
     }
-    
-//    func deleteLabel(fromHighlight highlightID: UUID, labelIdx: Int, completion: @escaping (Error?) -> Void) {
-//        // Reference to the specific label within a highlight
-//        let labelRef = Database.database().reference()
-//            .child("highlights")
-//            .child(highlightID.uuidString)
-//            .child("labels")
-//            .child(String(labelIdx))
-//
-//        // Remove the label from Firebase
-//        labelRef.removeValue { error, _ in
-//            completion(error)
-//        }
-//    }
-
 
 }
 
 #Preview {
-    EditHighlightView(highlight: Highlight.sampleData.items[0])
+    EditHighlightView(highlight: Highlight.sampleData.items[0], globalLabels: HighlighterShared.Label.sampleData)
 }

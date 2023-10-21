@@ -12,10 +12,11 @@ import HighlighterShared
 struct NewHighlightView: View {
     @ObservedObject var newHighlight: Highlight = Highlight.makeEmptyHighlight()
     @ObservedObject var highlights: Highlights
+    @ObservedObject var globalLabels: Labels
     @Binding var isPresentingNewHighlightView: Bool
     var body: some View {
         NavigationStack {
-            EditHighlightView(highlight: newHighlight)
+            EditHighlightView(highlight: newHighlight, globalLabels: globalLabels)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Dismiss") {
@@ -50,5 +51,5 @@ struct NewHighlightView: View {
 }
 
 #Preview {
-    NewHighlightView(highlights: Highlight.sampleData, isPresentingNewHighlightView: .constant(true))
+    NewHighlightView(highlights: Highlight.sampleData, globalLabels: HighlighterShared.Label.sampleData, isPresentingNewHighlightView: .constant(true))
 }

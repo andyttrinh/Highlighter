@@ -26,15 +26,21 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct HighlighterApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var highlights = Highlights(items: [])
+    @StateObject private var globalLabels = Labels(items: [])
 
     var body: some Scene {
         WindowGroup {
-            HighlightsView(highlights: highlights)
+            HighlightsView(highlights: highlights, globalLabels: globalLabels)
                 .onAppear {
                     fetchAllHighlights { fetchedHighlights in
                         self.highlights.items = fetchedHighlights
                         print(fetchedHighlights)
                     }
+                    
+                    fetchAllLabels { fetchedLabels in
+                            self.globalLabels.items = fetchedLabels
+                            print(fetchedLabels)
+                        }
                 }
         }
     }
@@ -67,4 +73,30 @@ struct HighlighterApp: App {
 
         }
     }
+    
+    func fetchAllLabels(completion: @escaping ([HighlighterShared.Label]) -> Void) {
+        let dbRef = Database.database().reference().child("globalLabels")
+        
+        dbRef.observeSingleEvent(of: .value) { (snapshot) in
+            guard let value = snapshot.value as? [[String: Any]] else {
+                completion([])
+                return
+            }
+            
+            var fetchedLabels: [HighlighterShared.Label] = []
+            
+            for labelData in value {
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: labelData, options: .prettyPrinted)
+                    let label = try JSONDecoder().decode(Label.self, from: jsonData)
+                    fetchedLabels.append(label)
+                } catch {
+                    print("Error decoding label: \(error)")
+                }
+            }
+            
+            completion(fetchedLabels)
+        }
+    }
+
 }

@@ -11,17 +11,16 @@
 
     struct HighlightsView: View {
         @ObservedObject var highlights: Highlights
-        @Environment(\.scenePhase) private var scenePhase
+        @ObservedObject var globalLabels: Labels
         @State var isPresentingNewHighlightView = false
         @State var isPresentingNewFilterView = false
         @State var labelFilter: [HighlighterShared.Label] = []
-        @ObservedObject var globalLabels = HighlighterShared.Label.sampleData
         
         var body: some View {
             NavigationStack {
                 List() {
                     ForEach(highlights.items.filter { highlight in filterFunc(highlight: highlight)}) {highlight in
-                        NavigationLink(destination: EditHighlightView(highlight: highlight)){
+                        NavigationLink(destination: EditHighlightView(highlight: highlight, globalLabels: globalLabels)){
                             HighlightCardView(highlight: highlight)
                         }
                     }
@@ -59,13 +58,11 @@
             .sheet(isPresented: $isPresentingNewHighlightView) {
                 NewHighlightView(
                     highlights: highlights,
+                    globalLabels: globalLabels,
                     isPresentingNewHighlightView: $isPresentingNewHighlightView)
             }
             .sheet(isPresented: $isPresentingNewFilterView) {
                 LabelsView(globalLabels: globalLabels, filterLabels: $labelFilter)
-            }
-            .onChange(of: scenePhase) { oldCount, newCount in
-                if newCount == .inactive {  }
             }
         }
         
@@ -85,5 +82,5 @@
     }
 
     #Preview {
-        HighlightsView(highlights: Highlight.sampleData)
+        HighlightsView(highlights: Highlight.sampleData, globalLabels: Label.sampleData)
     }

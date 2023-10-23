@@ -25,6 +25,7 @@
 		DF7097FA2AC7D117009BD691 /* LabelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F92AC7D117009BD691 /* LabelCardView.swift */; };
 		DF7097FC2AC7D927009BD691 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097FB2AC7D927009BD691 /* NavigationView.swift */; };
 		DF7097FE2AC7EEC4009BD691 /* LabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097FD2AC7EEC4009BD691 /* LabelsView.swift */; };
+		DF8B7B3C2AE720AF0047AD52 /* ShareExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B7B3B2AE720AF0047AD52 /* ShareExtensionView.swift */; };
 		DF9748DE2AE30E2100005E9C /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DF9748DD2AE30E2100005E9C /* FirebaseDatabaseSwift */; };
 		DF9748E82AE311BA00005E9C /* HighlighterShared.docc in Sources */ = {isa = PBXBuildFile; fileRef = DF9748E72AE311BA00005E9C /* HighlighterShared.docc */; };
 		DF9748EE2AE311BA00005E9C /* HighlighterShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9748E42AE311BA00005E9C /* HighlighterShared.framework */; };
@@ -141,6 +142,7 @@
 		DF7097F92AC7D117009BD691 /* LabelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCardView.swift; sourceTree = "<group>"; };
 		DF7097FB2AC7D927009BD691 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		DF7097FD2AC7EEC4009BD691 /* LabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelsView.swift; sourceTree = "<group>"; };
+		DF8B7B3B2AE720AF0047AD52 /* ShareExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareExtensionView.swift; sourceTree = "<group>"; };
 		DF9748E42AE311BA00005E9C /* HighlighterShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HighlighterShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9748E62AE311BA00005E9C /* HighlighterShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HighlighterShared.h; sourceTree = "<group>"; };
 		DF9748E72AE311BA00005E9C /* HighlighterShared.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = HighlighterShared.docc; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				DF1883C72ABD07E900935937 /* ShareViewController.swift */,
 				DF1883C92ABD07E900935937 /* MainInterface.storyboard */,
 				DF1883CC2ABD07E900935937 /* Info.plist */,
+				DF8B7B3B2AE720AF0047AD52 /* ShareExtensionView.swift */,
 			);
 			path = HighlighterShareExtension;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF8B7B3C2AE720AF0047AD52 /* ShareExtensionView.swift in Sources */,
 				DF1883C82ABD07E900935937 /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

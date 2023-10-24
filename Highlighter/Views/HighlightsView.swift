@@ -19,7 +19,9 @@
         var body: some View {
             NavigationStack {
                 List() {
-                    ForEach(highlights.items.filter { highlight in filterFunc(highlight: highlight)}) {highlight in
+                    ForEach(highlights.items
+                        .filter { highlight in filterFunc(highlight: highlight)}
+                        .sorted(by: {$0.date > $1.date})) {highlight in
                         NavigationLink(destination: EditHighlightView(highlight: highlight, globalLabels: globalLabels)){
                             HighlightCardView(highlight: highlight)
                         }

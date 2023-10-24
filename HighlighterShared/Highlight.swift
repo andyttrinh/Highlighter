@@ -11,17 +11,19 @@ public class Highlight: Codable, Identifiable, ObservableObject {
     public let id: UUID
     public var source: String
     public var content: String
+    public var date: Date
     @Published public var labels: [Label]?
 
-    public init(id: UUID = UUID(), source: String, content: String, labels: [Label]) {
+    public init(id: UUID = UUID(), source: String, content: String, date: Date = Date.now, labels: [Label]) {
         self.id = id
         self.source = source
         self.content = content
+        self.date = date
         self.labels = labels
     }
     
     enum CodingKeys: String, CodingKey {
-            case id, source, content, labels
+            case id, source, content, date, labels
         }
         
     public func encode(to encoder: Encoder) throws {
@@ -29,6 +31,7 @@ public class Highlight: Codable, Identifiable, ObservableObject {
             try container.encode(id, forKey: .id)
             try container.encode(source, forKey: .source)
             try container.encode(content, forKey: .content)
+            try container.encode(date, forKey: .date)
             try container.encode(labels, forKey: .labels)
         }
         
@@ -37,6 +40,7 @@ public class Highlight: Codable, Identifiable, ObservableObject {
             id = try container.decode(UUID.self, forKey: .id)
             source = try container.decode(String.self, forKey: .source)
             content = try container.decode(String.self, forKey: .content)
+            date = try container.decode(Date.self, forKey: .date)
             
             // Using decodeIfPresent for the labels key
             labels = try container.decodeIfPresent([Label].self, forKey: .labels) ?? []

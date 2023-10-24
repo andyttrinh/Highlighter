@@ -36,7 +36,7 @@ class ShareViewController: UIViewController {
                                 print(sharedText)
                                 // Handle your text and do other necessary actions here
                                 // Only when you want to dismiss your extension, call the completion handler
-                                 self?.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
+//                                 self?.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                             }
                         }
                     })

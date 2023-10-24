@@ -64,5 +64,15 @@ public class Highlights: ObservableObject {
     
     public init(items: [Highlight]) {
         self.items = items
+        self.items.sort(by: {$0.date > $1.date})
+    }
+    
+    public func add(item: Highlight) {
+        self.items.insert(item, at: 0)
+    }
+    
+    public func replaceItems(items: [Highlight]) {
+        self.items = items
+        self.items.sort(by: {$0.date > $1.date})
     }
 }

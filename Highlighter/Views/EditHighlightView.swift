@@ -15,6 +15,8 @@ struct EditHighlightView: View {
     @ObservedObject var globalLabels: Labels
     @State private var animate: Bool = false
     @State var selectedLabel: HighlighterShared.Label = HighlighterShared.Label.sampleData.items[0]
+    var isNewHighlight: Bool = false
+    
     var body: some View {
         Form {
             Section(header: Text("Info")){
@@ -29,12 +31,14 @@ struct EditHighlightView: View {
                     // Delete label from highlight
                     highlight.labels!.remove(atOffsets: indeces)
                     // Then update the entire labels key in firebase
-                    updateHighlightLabels(highlightID: highlight.id, newLabels: highlight.labels!) { error in
-                        if let error = error {
-                                print("Failed to add label: \(error.localizedDescription)")
-                            } else {
-                                print("HighlighterShared.Label successfully deleted!")
-                            }
+                    if (!isNewHighlight) {
+                        updateHighlightLabels(highlightID: highlight.id, newLabels: highlight.labels!) { error in
+                            if let error = error {
+                                    print("Failed to add label: \(error.localizedDescription)")
+                                } else {
+                                    print("HighlighterShared.Label successfully deleted!")
+                                }
+                        }
                     }
                 }
                 HStack {
@@ -58,12 +62,14 @@ struct EditHighlightView: View {
                 // Should probebly make highlight.labels observable somehow to remove this var - Andy
                 animate = !animate
                 
-                uploadLabel(inHighlight: highlight.id, newLabel: selectedLabel) { error in
-                    if let error = error {
-                            print("Failed to add label: \(error.localizedDescription)")
-                        } else {
-                            print("HighlighterShared.Label successfully added!")
-                        }
+                if (!isNewHighlight) {
+                    uploadLabel(inHighlight: highlight.id, newLabel: selectedLabel) { error in
+                        if let error = error {
+                                print("Failed to add label: \(error.localizedDescription)")
+                            } else {
+                                print("HighlighterShared.Label successfully added!")
+                            }
+                    }
                 }
             }
         }

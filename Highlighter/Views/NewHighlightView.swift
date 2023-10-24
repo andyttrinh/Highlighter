@@ -14,9 +14,10 @@ struct NewHighlightView: View {
     @ObservedObject var highlights: Highlights
     @ObservedObject var globalLabels: Labels
     @Binding var isPresentingNewHighlightView: Bool
+
     var body: some View {
         NavigationStack {
-            EditHighlightView(highlight: newHighlight, globalLabels: globalLabels)
+            EditHighlightView(highlight: newHighlight, globalLabels: globalLabels, isNewHighlight: true)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Dismiss") {
@@ -25,7 +26,7 @@ struct NewHighlightView: View {
                     }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Add") {
-                            highlights.items.append(newHighlight)
+                            highlights.add(item: newHighlight)
                             storeHighlight(highlight: newHighlight)
                             isPresentingNewHighlightView = false
                         }

@@ -30,10 +30,10 @@ struct HighlighterApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HighlightsView(highlights: highlights, globalLabels: globalLabels)
+            HighlightsView(highlights: highlights, globalLabels: globalLabels, fetchHighlights: fetchAllHighlights)
                 .onAppear {
                     fetchAllHighlights { fetchedHighlights in
-                        self.highlights.items = fetchedHighlights
+                        self.highlights.replaceItems(items: fetchedHighlights)
                         print(fetchedHighlights)
                     }
                     

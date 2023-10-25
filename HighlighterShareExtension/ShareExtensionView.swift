@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import HighlighterShared
+
 
 struct ShareExtensionView: View {
     var body: some View {
@@ -13,6 +15,6 @@ struct ShareExtensionView: View {
     }
 }
 
-#Preview {
-    ShareExtensionView()
-}
+//#Preview {
+//    ShareExtensionView()
+//}

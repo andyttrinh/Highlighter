@@ -14,7 +14,7 @@ struct HighlightCardView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("\(highlight.content)")
+            Text("\(String(highlight.content.prefix(200)))")
             Spacer()
             HStack {
                 HStack () {

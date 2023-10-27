@@ -19,6 +19,7 @@
 		DF225EFF2ABCF304008D0FBB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF225EFE2ABCF304008D0FBB /* Preview Assets.xcassets */; };
 		DF225F0A2ABCF3F2008D0FBB /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF225F092ABCF3F2008D0FBB /* PreviewContainer.swift */; };
 		DF225F0C2ABCF660008D0FBB /* EditHighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF225F0B2ABCF660008D0FBB /* EditHighlightView.swift */; };
+		DF543AA12AEB4DCB0093D8DC /* LabelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF543AA02AEB4DCB0093D8DC /* LabelCardView.swift */; };
 		DF7097F42AC7C9AE009BD691 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F32AC7C9AE009BD691 /* ThemeView.swift */; };
 		DF7097F62AC7CA4C009BD691 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F52AC7CA4C009BD691 /* ThemePicker.swift */; };
 		DF7097F82AC7D04B009BD691 /* HighlightCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F72AC7D04B009BD691 /* HighlightCardView.swift */; };
@@ -135,6 +136,7 @@
 		DF225EFE2ABCF304008D0FBB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DF225F092ABCF3F2008D0FBB /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		DF225F0B2ABCF660008D0FBB /* EditHighlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHighlightView.swift; sourceTree = "<group>"; };
+		DF543AA02AEB4DCB0093D8DC /* LabelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCardView.swift; sourceTree = "<group>"; };
 		DF6AD8E62ABDF9E100B8DA0A /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		DF7097F12AC7C355009BD691 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		DF7097F32AC7C9AE009BD691 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				DF1883CC2ABD07E900935937 /* Info.plist */,
 				DF8B7B3B2AE720AF0047AD52 /* ShareExtensionView.swift */,
 				DF8B7B3D2AE8782A0047AD52 /* EditHighlightView.swift */,
+				DF543AA02AEB4DCB0093D8DC /* LabelCardView.swift */,
 			);
 			path = HighlighterShareExtension;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				DF8B7B3C2AE720AF0047AD52 /* ShareExtensionView.swift in Sources */,
 				DF1883C82ABD07E900935937 /* ShareViewController.swift in Sources */,
 				DF8B7B3E2AE8782A0047AD52 /* EditHighlightView.swift in Sources */,
+				DF543AA12AEB4DCB0093D8DC /* LabelCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

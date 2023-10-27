@@ -25,8 +25,8 @@ struct EditHighlightView: View {
             }
             Section(header: Text("Labels")) {
                 ForEach(highlight.labels!) { label in
-//                    LabelCardView(label: label)
-                    Text("\(label.name)")
+                    LabelCardView(label: label)
+//                    Text("\(label.name)")
                 }
                 .onDelete { indeces in
                     // Delete label from highlight

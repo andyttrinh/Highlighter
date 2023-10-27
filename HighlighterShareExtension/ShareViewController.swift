@@ -62,6 +62,7 @@ class ShareViewController: UIViewController {
     
     func hostingControllerForShareExtensionView() -> UIViewController {
         let view = ShareExtensionView()
+//        let view = EditHighlightView(highlight: Highlight.sampleData.items[0], globalLabels: HighlighterShared.Label.sampleData)
         let hostingController = UIHostingController(rootView: view)
         return hostingController
     }

@@ -20,6 +20,7 @@
 		DF225F0A2ABCF3F2008D0FBB /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF225F092ABCF3F2008D0FBB /* PreviewContainer.swift */; };
 		DF225F0C2ABCF660008D0FBB /* EditHighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF225F0B2ABCF660008D0FBB /* EditHighlightView.swift */; };
 		DF543AA12AEB4DCB0093D8DC /* LabelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF543AA02AEB4DCB0093D8DC /* LabelCardView.swift */; };
+		DF543AA32AEC53FE0093D8DC /* LabelCubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF543AA22AEC53FE0093D8DC /* LabelCubeView.swift */; };
 		DF7097F42AC7C9AE009BD691 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F32AC7C9AE009BD691 /* ThemeView.swift */; };
 		DF7097F62AC7CA4C009BD691 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F52AC7CA4C009BD691 /* ThemePicker.swift */; };
 		DF7097F82AC7D04B009BD691 /* HighlightCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7097F72AC7D04B009BD691 /* HighlightCardView.swift */; };
@@ -137,6 +138,7 @@
 		DF225F092ABCF3F2008D0FBB /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		DF225F0B2ABCF660008D0FBB /* EditHighlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHighlightView.swift; sourceTree = "<group>"; };
 		DF543AA02AEB4DCB0093D8DC /* LabelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCardView.swift; sourceTree = "<group>"; };
+		DF543AA22AEC53FE0093D8DC /* LabelCubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCubeView.swift; sourceTree = "<group>"; };
 		DF6AD8E62ABDF9E100B8DA0A /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		DF7097F12AC7C355009BD691 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		DF7097F32AC7C9AE009BD691 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				DF7097FB2AC7D927009BD691 /* NavigationView.swift */,
 				DF7097FD2AC7EEC4009BD691 /* LabelsView.swift */,
 				DFFBAE552AD1136100BA9E07 /* AddLabel.swift */,
+				DF543AA22AEC53FE0093D8DC /* LabelCubeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 			files = (
 				DF7097FC2AC7D927009BD691 /* NavigationView.swift in Sources */,
 				DF7097F62AC7CA4C009BD691 /* ThemePicker.swift in Sources */,
+				DF543AA32AEC53FE0093D8DC /* LabelCubeView.swift in Sources */,
 				DFFBAE562AD1136100BA9E07 /* AddLabel.swift in Sources */,
 				DF225EFA2ABCF303008D0FBB /* HighlightsView.swift in Sources */,
 				DF225F0C2ABCF660008D0FBB /* EditHighlightView.swift in Sources */,

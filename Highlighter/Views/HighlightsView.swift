@@ -20,7 +20,7 @@ struct HighlightsView: View {
     
     var body: some View {
         NavigationStack {
-            List() {
+            ScrollView {
                 ForEach(highlights.items
                     .filter { highlight in filterFunc(highlight: highlight)}) {highlight in
                     NavigationLink(destination: EditHighlightView(highlight: highlight, globalLabels: globalLabels)){
@@ -42,7 +42,6 @@ struct HighlightsView: View {
                         }
                     }
                 })
-                
             }
             .refreshable {
                 await refreshData()
